@@ -17,14 +17,18 @@
 ;==========================================================
 
 [colors]
-;background = ${xrdb:color0:#222}
 background = #222
 background-alt = #444
-;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
 foreground-alt = #555
 primary = #ffb52a
 secondary = #e60053
+
+;pink
+underline-workspace = #c09
+;teal
+underline-module = #099 
+
 alert = #bd2c40
 
 [bar/example]
@@ -50,26 +54,35 @@ line-color = #f00
 ;tray-background = ${root.background}
 tray-detatched = false
 
+
 padding-left = 0
 padding-right = 2
 
-module-margin-left = 0
-module-margin-right = 1
+;module-margin-left = 0
+;module-margin-right = 1
+module-margin = 1
+separator = |
+
 
 ;font-0 = fixed:pixelsize=12;1
 ;font-1 = unifont:fontformat=truetype:size=16:antialias=false;0
 ;font-2 = siji:pixelsize=24;1
 ;font-1 = "Hack Nerd Font:style=regular:size=10"
 
-font-0 = "Font Awesome 5 Free,Font Awesome 5 Free Regular:style=Regular:size=12"
-font-1 = "TerminessTTF Nerd Font Mono:style=medium:size=12"
+;font-0 = "Font Awesome 5 Free,Font Awesome 5 Free Regular:style=Regular:size=14"
+
+font-0 = "Font Awesome 5 Brands Regular:style=Regular:size=12"
+font-1 = "Font Awesome 5 Free Regular:style=Regular:size=12"
+font-2 = "Font Awesome 5 Free Solid:style=Solid:size=10"
+font-3 = "TerminessTTF Nerd Font Mono:style=medium:size=12"
 
 
 modules-left = i3
 #modules-center = mpd
-modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
+modules-right = filesystem pulseaudio memory cpu wlan eth battery temperature date powermenu
+;removed alsa xbacklight xkeyboard
 
-tray-position = right
+tray-position = none
 tray-padding = 2
 ;tray-background = #0063ff
 
@@ -121,6 +134,7 @@ wrapping-scroll = false
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
 
+
 label-mode-padding = 2
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
@@ -128,7 +142,8 @@ label-mode-background = ${colors.primary}
 ; focused = Active workspace on focused monitor
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
+;label-focused-underline = ${colors.primary}
+label-focused-underline = ${colors.underline-workspace}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
@@ -190,7 +205,8 @@ type = internal/cpu
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
+;format-underline = #f90000
+format-underline = ${colors.underline-module}
 label = %percentage:2%%
 
 [module/memory]
@@ -198,7 +214,8 @@ type = internal/memory
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
+;format-underline = #4bffdc
+format-underline = ${colors.underline-module}
 label = %percentage_used%%
 
 [module/wlan]
@@ -207,7 +224,8 @@ interface = wlan0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
+;format-connected-underline = #9f78e1
+format-connected-underline = ${colors.underline-module}
 label-connected = %essid%
 
 format-disconnected =
@@ -228,7 +246,8 @@ type = internal/network
 interface = enp3s0f1
 interval = 3.0
 
-format-connected-underline = #55aa55
+;format-connected-underline = #55aa55
+format-connected-underline = ${colors.underline-module}
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
@@ -252,7 +271,8 @@ time-alt = %H:%M:%S
 ;format-prefix = 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
+;format-underline = #0a6cf5
+format-underline = ${colors.underline-module}
 
 label = %date% %time%
 
@@ -315,10 +335,11 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 type = internal/battery
 battery = BAT1
 adapter = ACAD
-full-at = 98
+full-at = 95
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
+;format-charging-underline = #ffb52a
+format-underline = ${colors.underline-module}
 
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
@@ -350,7 +371,8 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <ramp> <label>
-format-underline = #f50a4d
+;format-underline = #f50a4d
+format-underline = ${colors.underline-module}
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
@@ -370,7 +392,8 @@ expand-right = true
 
 format-spacing = 1
 
-label-open = 
+;label-open = 
+label-open = 
 label-open-foreground = ${colors.secondary}
 label-close =  cancel
 label-close-foreground = ${colors.secondary}
