@@ -6,9 +6,10 @@ killall -q polybar
 # Wait until all processes have shutdown
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done;
 
-# Launch the example bar
+# Launch polybar
 echo "---" | tee -a /tmp/polybar.log
-polybar example -r >> /tmp/polybar.log 2>&1 &
+for m in $(polybar --list-monitors | cut -d":" -f1); do
+    MONITOR=$m polybar main -r >> /tmp/polybar_$m.log 2>&1 &
+done
 
-echo "Bars launched..."
-
+echo "Bars launched bars for all monitors"
