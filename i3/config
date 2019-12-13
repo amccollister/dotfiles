@@ -7,8 +7,12 @@ focus_follows_mouse no
 
 # setup gaps
 for_window [class=".*"] border pixel 0
-gaps inner 20
-gaps bottom 40
+gaps inner 25
+gaps top 36
+#gaps left 7
+#gaps right 7
+#gaps bottom 50
+border_radius 4
 
 # start a terminal
 bindsym $mod+Return exec kitty
@@ -17,11 +21,11 @@ bindsym $mod+Return exec kitty
 exec --no-startup-id xrandr --output DP-0 --mode 2560x1440 --rate 144 --output DP-2 --mode 2560x1440 --rate 144 --right-of DP-0 --output DP-4 --mode 2560x1440 --rate 144 --right-of DP-2
 
 # setup wallpaper
-exec_always feh --bg-scale ~/documents/space.jpg
+exec_always feh --bg-scale ~/documents/space_mountain.png
 
 # start programs
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec --no-startup-id redshift-gtk
+exec --no-startup-id redshift
 exec --no-startup-id guake
 exec --no-startup-id ckb-next -b
 bindsym $mod+d exec rofi -lines 12 -width 25  -location 0 -show drun -sidebar-mode
@@ -58,6 +62,10 @@ bindsym $mod+Shift+f floating toggle
 
 # hold $mod to drag a floating window
 floating_modifier $mod
+
+# pop-ups should be floating
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
 
 # defining workspaces
 set $ws1 "1"
