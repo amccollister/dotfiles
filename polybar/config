@@ -3,6 +3,8 @@
 ;   go to https://github.com/polybar/polybar              ;
 ;==========================================================
 
+; TODO: add music player to left side and adjust colors and setup picom
+
 [colors]
 background = #222
 background-alt = #444
@@ -12,10 +14,10 @@ primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 
-;pink and teal
+;pink and teal 
 workspace = #c09
 module = #099 
-
+        
 
 [bar/main]
 ;bottom = true
@@ -44,7 +46,7 @@ font-1 = "Font Awesome 5 Free Regular:style=Regular:size=14"
 font-2 = "Font Awesome 5 Free Solid:style=Solid:size=14"
 font-3 = "Iosevka Nerd Font Mono:style=light:size=14"
 
-modules-left = i3
+modules-left = i3 spotify
 ;modules-center = mpd
 modules-center = date
 modules-right =  cpu memory temperature filesystem pulseaudio wlan eth battery powermenu
@@ -68,7 +70,6 @@ label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
-
 ;format-mounted-overline = ${colors.module}
 
 
@@ -90,7 +91,7 @@ label-focused-background = ${colors.background-alt}
 label-focused-overline = ${colors.workspace}
 label-focused-padding = 1
 
-;; visible = Active workspace on unfocused monitor
+; visible = Active workspace on unfocused monitor
 label-visible = %index%
 ;label-visible-background = ${self.label-focused-background}
 ;label-visible-overline = ${self.label-focused-overline}
@@ -107,18 +108,28 @@ label-urgent-background = ${colors.alert}
 label-urgent-padding = 1
 
 
-[module/mpd]
-type = internal/mpd
-format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
+;[module/mpd]
+;type = internal/mpd
+;format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
+;
+;icon-prev = 
+;icon-stop = 
+;icon-play = 
+;icon-pause = 
+;icon-next = 
+;
+;label-song-maxlen = 25
+;label-song-ellipsis = true
 
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
 
-label-song-maxlen = 25
-label-song-ellipsis = true
+[module/spotify]
+type = custom/script
+interval = 1
+format-prefix = " "
+format = <label>
+exec = python ~/.config/polybar/spotifyd_status.py -f '{artist}: {song}'
+;exec = python ~/.config/polybar/spotifyd_status.py -p
+format-underline = #1db954
 
 
 [module/cpu]
@@ -148,7 +159,7 @@ ramp-signal-0 = 
 ramp-signal-foreground = ${colors.foreground-alt}
 
 format-connected = <ramp-signal> <label-connected>
-;ormat-connected-overline = ${colors.module}
+;format-connected-overline = ${colors.module}
 label-connected = %essid%
 
 format-disconnected =
@@ -282,17 +293,3 @@ menu-0-0 = reboot
 menu-0-0-exec = reboot
 menu-0-1 = shutdown
 menu-0-1-exec = shutdown now
-
-
-[settings]
-screenchange-reload = true
-;compositing-background = xor
-;compositing-background = screen
-;compositing-foreground = source
-;compositing-border = over
-pseudo-transparency = true
-
-
-[global/wm]
-margin-top = 10
-margin-bottom = 10

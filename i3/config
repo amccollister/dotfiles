@@ -12,13 +12,14 @@ gaps top 36
 #gaps left 7
 #gaps right 7
 #gaps bottom 50
-border_radius 4
 
 # start a terminal
 bindsym $mod+Return exec kitty
 
-# setup triple monitor with xrandr
+# setup triple monitor and mouse speed with xrandr
 exec --no-startup-id xrandr --output DP-0 --mode 2560x1440 --rate 144 --output DP-2 --mode 2560x1440 --rate 144 --right-of DP-0 --output DP-4 --mode 2560x1440 --rate 144 --right-of DP-2
+exec --no-startup-id xinput --set-prop 17 "libinput Accel Speed" -0.5
+
 
 # setup wallpaper
 exec_always feh --bg-scale ~/documents/space_mountain.png
@@ -27,7 +28,6 @@ exec_always feh --bg-scale ~/documents/space_mountain.png
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id redshift
 exec --no-startup-id guake
-exec --no-startup-id ckb-next -b
 bindsym $mod+d exec rofi -lines 12 -width 25  -location 0 -show drun -sidebar-mode
 
 # Use loginctl lock-session or $mod+l to lock the system
