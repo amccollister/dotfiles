@@ -14,20 +14,20 @@ primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 
-;pink and teal 
+;pink/teal 
 workspace = #c09
 module = #099 
         
 
 [bar/main]
-;bottom = true
 monitor = ${env:MONITOR:}
-;width = 98%
 height = 2.5%
+fixed-center = true
+;bottom = true
+;width = 98%
 ;offset-x = 1%
 ;offset-y = 1%
 ;radius = 10.0
-fixed-center = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -47,7 +47,6 @@ font-2 = "Font Awesome 5 Free Solid:style=Solid:size=14"
 font-3 = "Iosevka Nerd Font Mono:style=light:size=14"
 
 modules-left = i3 spotify
-;modules-center = mpd
 modules-center = date
 modules-right =  cpu memory temperature filesystem pulseaudio wlan eth battery powermenu
 
@@ -108,26 +107,16 @@ label-urgent-background = ${colors.alert}
 label-urgent-padding = 1
 
 
-;[module/mpd]
-;type = internal/mpd
-;format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
-;
-;icon-prev = 
-;icon-stop = 
-;icon-play = 
-;icon-pause = 
-;icon-next = 
-;
-;label-song-maxlen = 25
-;label-song-ellipsis = true
-
-
 [module/spotify]
 type = custom/script
-interval = 1
+interval = 5
 format-prefix = " "
 format = <label>
-exec = python ~/.config/polybar/spotifyd_status.py -f '{artist}: {song}'
+; Need to fix this to make it scroll and other cool things.
+; The spotify_status used for spotifyd seems to get throttled a whole bunch.
+; I need to edit a scrolling script and the spotifyd_status to accommodate.
+; Probably a cron script each minute and the spotifyd settings to run on song change.
+;exec = python ~/.config/polybar/spotifyd_status.py -f '{artist}: {song}'
 ;exec = python ~/.config/polybar/spotifyd_status.py -p
 format-underline = #1db954
 
@@ -261,6 +250,7 @@ animation-charging-framerate = 500
 type = internal/temperature
 thermal-zone = 0
 hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input
+base-temperature = 20
 warn-temperature = 72
 
 format = <ramp> <label>

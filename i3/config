@@ -26,9 +26,15 @@ exec_always feh --bg-scale ~/documents/space_mountain.png
 
 # start programs
 exec_always --no-startup-id ~/.config/polybar/launch.sh
+bindsym $mod+d exec rofi -lines 12 -width 25  -location 0 -show drun -sidebar-mode
+exec --no-startup-id i3-msg 'workspace 2; exec firefox'
+exec --no-startup-id i3-msg 'workspace 1; exec discord'
 exec --no-startup-id redshift
 exec --no-startup-id guake
-bindsym $mod+d exec rofi -lines 12 -width 25  -location 0 -show drun -sidebar-mode
+# Setup picom and use the tryone custom branch with kawase blur 
+# https://aur.archlinux.org/packages/picom-tryone-git/
+# https://github.com/tryone144/compton/tree/feature/dual_kawase
+
 
 # Use loginctl lock-session or $mod+l to lock the system
 exec--no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy --nofork
