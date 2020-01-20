@@ -109,9 +109,11 @@ label-urgent-padding = 1
 
 [module/spotify]
 type = custom/script
-interval = 5
+interval = .4
 format-prefix = " "
 format = <label>
+exec = head ~/.config/polybar/song.txt -n 1
+;exec = python ~/.config/polybar/scroll_text.py ~/.config/polybar/song.txt
 ; Need to fix this to make it scroll and other cool things.
 ; The spotify_status used for spotifyd seems to get throttled a whole bunch.
 ; I need to edit a scrolling script and the spotifyd_status to accommodate.
