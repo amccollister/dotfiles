@@ -14,4 +14,4 @@ while True:
     with open(text, "w") as f:
         f.writelines(rewrite)
     
-    time.sleep(.4)
+    time.sleep(.25)

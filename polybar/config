@@ -109,7 +109,7 @@ label-urgent-padding = 1
 
 [module/spotify]
 type = custom/script
-interval = .4
+interval = .05
 format-prefix = " "
 format = <label>
 exec = head ~/.config/polybar/song.txt -n 1
@@ -158,7 +158,7 @@ format-disconnected =
 
 [module/eth]
 type = internal/network
-interface = enp5s0
+interface = enp8s0
 interval = 3.0
 
 format-connected-prefix-foreground = ${colors.foreground-alt}
@@ -251,7 +251,7 @@ animation-charging-framerate = 500
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
-hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input
+hwmon-path = /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon0/temp1_input
 base-temperature = 20
 warn-temperature = 72
 
