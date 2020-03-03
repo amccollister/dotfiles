@@ -27,7 +27,7 @@ try:
     # Create the scrolling list
     if status == "Playing":
         for i in range(len(song_output)):
-            output.append((song_output[i:]+song_output[:i])[:MAX_LENGTH])
+            output.append("|"+(song_output[i:]+song_output[:i])[:MAX_LENGTH]+"|")
     else:
         output.append(" PAUSED ")
 
@@ -37,8 +37,9 @@ except Exception as e:
     #else:
     #    print(e)
     print(e)
+    output.append(" OFFLINE ")
 
-# Write the text to the file    
+# Write the text to the file
 with open(song_file, "w") as f:
     for line in output:
         f.write(line+"\n")

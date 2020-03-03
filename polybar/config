@@ -1,9 +1,7 @@
 ;==========================================================
-;   To learn more about how to configure Polybar          ; 
+;   To learn more about how to configure Polybar          ;
 ;   go to https://github.com/polybar/polybar              ;
 ;==========================================================
-
-; TODO: add music player to left side and adjust colors and setup picom
 
 [colors]
 background = #222
@@ -14,14 +12,15 @@ primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 
-;pink/teal 
+;pink/teal
 workspace = #c09
-module = #099 
-        
+module = #099
+
 
 [bar/main]
 monitor = ${env:MONITOR:}
-height = 2.5%
+;height = 2.5%
+height = 3.3%
 fixed-center = true
 ;bottom = true
 ;width = 98%
@@ -41,14 +40,15 @@ padding-right = 1
 module-margin = 1
 separator = %{F#444}\%{F-}
 
-font-0 = "Font Awesome 5 Brands Regular:style=Regular:size=12"
-font-1 = "Font Awesome 5 Free Regular:style=Regular:size=14"
-font-2 = "Font Awesome 5 Free Solid:style=Solid:size=14"
-font-3 = "Iosevka Nerd Font Mono:style=light:size=14"
+font-0 = "Font Awesome 5 Brands Regular:style=Regular:size=24"
+font-1 = "Font Awesome 5 Free Regular:style=Regular:size=18"
+font-2 = "Font Awesome 5 Free Solid:style=Solid:size=18"
+font-3 = "Iosevka Nerd Font Mono:style=light:size=18"
 
-modules-left = i3 spotify
+; make ones for these ff 龜 discord  code  steam  thunar 
+modules-left = i3 code discord ff steam sp thunar spotify
 modules-center = date
-modules-right =  cpu memory temperature filesystem pulseaudio wlan eth battery powermenu
+modules-right = cpu memory temperature filesystem pulseaudio wlan eth battery powermenu
 
 override-redirect = true
 wm-restack = i3
@@ -109,18 +109,48 @@ label-urgent-padding = 1
 
 [module/spotify]
 type = custom/script
-interval = .05
+interval = .1
 format-prefix = " "
 format = <label>
 exec = head ~/.config/polybar/song.txt -n 1
-;exec = python ~/.config/polybar/scroll_text.py ~/.config/polybar/song.txt
-; Need to fix this to make it scroll and other cool things.
-; The spotify_status used for spotifyd seems to get throttled a whole bunch.
-; I need to edit a scrolling script and the spotifyd_status to accommodate.
-; Probably a cron script each minute and the spotifyd settings to run on song change.
-;exec = python ~/.config/polybar/spotifyd_status.py -f '{artist}: {song}'
-;exec = python ~/.config/polybar/spotifyd_status.py -p
+; TODO: make a systemctl timer to check the song periodically
 format-underline = #1db954
+
+
+[module/sp]
+type = custom/text
+content = 
+click-left = spotify > /dev/null 2>&1 &
+
+
+[module/ff]
+type = custom/text
+content = 龜
+click-left = firefox &
+
+
+[module/discord]
+type = custom/text
+content = 
+click-left = discord &
+
+
+[module/code]
+type = custom/text
+content = 
+click-left = code &
+
+
+[module/steam]
+type = custom/text
+content = 
+click-left = steam > /dev/null 2>&1 &
+
+
+[module/thunar]
+type = custom/text
+content = 
+click-left = thunar &
 
 
 [module/cpu]
