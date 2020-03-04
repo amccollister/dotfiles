@@ -4,29 +4,23 @@
 ;==========================================================
 
 [colors]
-background = #222
-background-alt = #444
-foreground = #dfdfdf
-foreground-alt = #555
-primary = #ffb52a
-secondary = #e60053
-alert = #bd2c40
+background = #2C1338
+background-alt = #4D2166
+foreground = #E8C0E8
+foreground-alt = #697B69
 
-;pink/teal
-workspace = #c09
-module = #099
+primary = #FFB52A
+secondary = #BF0005
+alert = #A6297A
+
+workspace = #4AA84D
+visible-workspace = #9541BF
 
 
 [bar/main]
 monitor = ${env:MONITOR:}
-;height = 2.5%
-height = 3.3%
+height = 3%
 fixed-center = true
-;bottom = true
-;width = 98%
-;offset-x = 1%
-;offset-y = 1%
-;radius = 10.0
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -38,15 +32,14 @@ padding-left = 0
 padding-right = 1
 
 module-margin = 1
-separator = %{F#444}\%{F-}
+separator = %{F#697B69}\%{F-}
 
-font-0 = "Font Awesome 5 Brands Regular:style=Regular:size=24"
-font-1 = "Font Awesome 5 Free Regular:style=Regular:size=18"
-font-2 = "Font Awesome 5 Free Solid:style=Solid:size=18"
+font-0 = "Font Awesome 5 Brands Regular:style=Regular:size=22"
+font-1 = "Font Awesome 5 Free Regular:style=Regular:size=20"
+font-2 = "Font Awesome 5 Free Solid:style=Solid:size=20"
 font-3 = "Iosevka Nerd Font Mono:style=light:size=18"
 
-; make ones for these ff 龜 discord  code  steam  thunar 
-modules-left = i3 code discord ff steam sp thunar spotify
+modules-left = i3 code discord ff steam sp folder spotify
 modules-center = date
 modules-right = cpu memory temperature filesystem pulseaudio wlan eth battery powermenu
 
@@ -65,11 +58,9 @@ interval = 10
 
 mount-0 = /
 
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+label-mounted = %{F#4AA84D}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
-
-;format-mounted-overline = ${colors.module}
 
 
 [module/i3]
@@ -78,7 +69,6 @@ format = <label-state> <label-mode>
 index-sort = true
 enable-scroll = true
 wrapping-scroll = false
-;pin-workspaces = true
 
 label-mode-padding = 1
 label-mode-foreground = #000
@@ -92,9 +82,7 @@ label-focused-padding = 1
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %index%
-;label-visible-background = ${self.label-focused-background}
-;label-visible-overline = ${self.label-focused-overline}
-label-visible-overline = ${colors.module}
+label-visible-overline = ${colors.visible-workspace}
 label-visible-padding = ${self.label-focused-padding}
 
 ; unfocused = Inactive workspace on any monitor
@@ -109,35 +97,39 @@ label-urgent-padding = 1
 
 [module/spotify]
 type = custom/script
-interval = .1
+interval = 0.05
 format-prefix = " "
 format = <label>
 exec = head ~/.config/polybar/song.txt -n 1
 ; TODO: make a systemctl timer to check the song periodically
-format-underline = #1db954
+format-underline = ${colors.workspace}
 
 
 [module/sp]
 type = custom/text
 content = 
+content-foreground = #4AA84D
 click-left = spotify > /dev/null 2>&1 &
 
 
 [module/ff]
 type = custom/text
 content = 龜
+content-foreground = #FF6611
 click-left = firefox &
 
 
 [module/discord]
 type = custom/text
 content = 
+content-foreground = #7389DC
 click-left = discord &
 
 
 [module/code]
 type = custom/text
 content = 
+content-foreground = #007ACC
 click-left = code &
 
 
@@ -147,9 +139,10 @@ content = 
 click-left = steam > /dev/null 2>&1 &
 
 
-[module/thunar]
+[module/folder]
 type = custom/text
 content = 
+content-foreground = #FFCA28
 click-left = thunar &
 
 
@@ -158,7 +151,6 @@ type = internal/cpu
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-;format-overline = ${colors.module}
 label = %percentage:2%%
 
 
@@ -167,7 +159,6 @@ type = internal/memory
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-;format-overline = ${colors.module}
 label = %percentage_used%%
 
 
@@ -180,7 +171,6 @@ ramp-signal-0 = 
 ramp-signal-foreground = ${colors.foreground-alt}
 
 format-connected = <ramp-signal> <label-connected>
-;format-connected-overline = ${colors.module}
 label-connected = %essid%
 
 format-disconnected =
@@ -206,16 +196,12 @@ type = internal/date
 interval = 5
 
 date = "%b %d"
-;date-alt = " %Y-%m-%d"
-
 time = %H:%M
-;time-alt = %H:%M:%S
 
-;format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
 format-overline = ${colors.workspace}
 
-label = "%date% %{F#777}|%{F-} %time%"
+label = "%date% %{F#697B69}|%{F-} %time%"
 
 
 [module/pulseaudio]
@@ -245,7 +231,6 @@ bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
-;format-volume-overline = ${colors.module}
 format-muted-overline = ${colors.workspace}
 
 
@@ -256,11 +241,7 @@ adapter = ACAD
 full-at = 95
 
 format-charging = <animation-charging> <label-charging>
-;format-charging-overline = ${colors.module}
-;format-overline = ${colors.module}
-
 format-discharging = <ramp-capacity> <label-discharging>
-;format-discharging-overline = ${self.format-charging-overline}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -286,7 +267,6 @@ base-temperature = 20
 warn-temperature = 72
 
 format = <ramp> <label>
-;format-overline = ${colors.module}
 format-warn = <ramp> <label-warn>
 ;format-warn-overline = ${self.format-overline}
 

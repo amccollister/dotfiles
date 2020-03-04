@@ -8,7 +8,7 @@ focus_follows_mouse no
 # setup gaps
 for_window [class=".*"] border pixel 0
 gaps inner 25
-gaps top 48
+gaps top 43
 
 # start a terminal
 bindsym $mod+Return exec kitty
@@ -18,7 +18,6 @@ exec --no-startup-id xrandr --output DisplayPort-0 --mode 2560x1440 --rate 144 -
 exec --no-startup-id xinput --set-prop 17 "libinput Accel Speed" -0.5
 workspace 1 output HDMI-A-0
 workspace 2 output DisplayPort-0
-
 
 # setup wallpaper
 exec_always feh --bg-scale ~/documents/space_mountain.png
