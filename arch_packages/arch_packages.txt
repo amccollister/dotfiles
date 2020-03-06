@@ -25,7 +25,6 @@ nano
 pacman-contrib
 pass
 patch
-picom
 pkgconf
 pulsemixer
 redshift
