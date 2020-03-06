@@ -19,7 +19,7 @@ visible-workspace = #9541BF
 
 [bar/main]
 monitor = ${env:MONITOR:}
-height = 3%
+height = 4%
 fixed-center = true
 
 background = ${colors.background}
@@ -35,9 +35,9 @@ module-margin = 1
 separator = %{F#697B69}\%{F-}
 
 font-0 = "Font Awesome 5 Brands Regular:style=Regular:size=22"
-font-1 = "Font Awesome 5 Free Regular:style=Regular:size=20"
-font-2 = "Font Awesome 5 Free Solid:style=Solid:size=20"
-font-3 = "Iosevka Nerd Font Mono:style=light:size=18"
+font-1 = "Font Awesome 5 Free Regular:style=Regular:size=18"
+font-2 = "Font Awesome 5 Free Solid:style=Solid:size=18"
+font-3 = "Iosevka Nerd Font Mono:style=light:size=16"
 
 modules-left = i3 code discord ff steam sp folder spotify
 modules-center = date
