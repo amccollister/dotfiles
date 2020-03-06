@@ -1,0 +1,126 @@
+# win key is mod
+set $mod Mod4
+
+# set default font and disable mouse focus
+font pango:monospace 8
+focus_follows_mouse no
+
+# setup gaps
+for_window [class=".*"] border pixel 0
+gaps inner 25
+gaps top 43
+
+# start a terminal
+bindsym $mod+Return exec kitty
+
+# setup monitors, workspaces and mouse speed with xrandr
+exec --no-startup-id xrandr --output DisplayPort-0 --mode 2560x1440 --rate 144 --output HDMI-A-0 --mode 1920x1080 --rate 60 --left-of DisplayPort-0
+exec --no-startup-id xinput --set-prop 17 "libinput Accel Speed" -0.5
+workspace 1 output HDMI-A-0
+workspace 2 output DisplayPort-0
+
+# setup wallpaper
+exec_always feh --bg-scale ~/documents/space_mountain.png
+
+# start programs
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec --no-startup-id python ~/.config/polybar/scroll_text.py ~/.config/polybar/song.txt
+exec --no-startup-id echo " OFFLINE " > ~/.config/polybar/song.txt
+bindsym $mod+d exec rofi -lines 12 -width 25  -location 0 -show drun -sidebar-mode
+exec --no-startup-id i3-msg 'workspace 1; exec firefox'
+exec --no-startup-id i3-msg 'workspace 2; exec discord'
+exec --no-startup-id redshift
+exec --no-startup-id guake
+
+# Use loginctl lock-session or $mod+l to lock the system
+exec--no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy --nofork
+bindsym $mod+l exec i3lock-fancy
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# change focus
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal/veritcal orientation
+bindsym $mod+h split h
+bindsym $mod+v split v
+bindsym $mod+e layout toggle split
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# toggle tiling / floating
+bindsym $mod+Shift+f floating toggle
+
+# hold $mod to drag a floating window
+floating_modifier $mod
+
+# pop-ups should be floating
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+
+# defining workspaces
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+
+# defining workspace keybinds
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+
+# config for reload, reset, and exit
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+bindsym $mod+r mode "resize"
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left/right will adjust the window’s width.
+        # Pressing up/down will adjust the window’s height.
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
