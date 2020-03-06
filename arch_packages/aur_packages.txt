@@ -1,0 +1,9 @@
+gotop-bin
+i3lock-fancy-git
+nerd-fonts-complete
+polybar
+spotify
+spotify-tui
+spotifyd-full
+steam-fonts
+yay
