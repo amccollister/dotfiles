@@ -4,6 +4,7 @@ arc-gtk-theme
 autoconf
 automake
 base
+bash-completion
 bison
 code
 dhcpcd
