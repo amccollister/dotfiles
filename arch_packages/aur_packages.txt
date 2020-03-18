@@ -1,5 +1,5 @@
 gotop-bin
-i3lock-fancy-git
+i3lock-fancy-dualmonitors-git
 nerd-fonts-complete
 polybar
 spotify
