@@ -1,12 +1,8 @@
 i3lock-fancy-dualmonitors-git
-lib32-mesa-git
-mesa-git
 nerd-fonts-complete
 polybar
-ringcentral-meetings-bin
 spotify
 spotify-tui
 spotifyd-full
 steam-fonts
-xf86-video-amdgpu-git
 yay
