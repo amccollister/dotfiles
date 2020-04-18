@@ -10,6 +10,7 @@ dhcpcd
 discord
 firefox
 flex
+git
 glances
 grub
 guake
@@ -32,13 +33,12 @@ pulsemixer
 redshift
 rofi
 steam
+sudo
 thunar
 ttf-font-awesome
-vi
 vim
 wine-gecko
 wine-mono
-wireshark-qt
 wqy-zenhei
 xf86-video-amdgpu
 xorg-server
