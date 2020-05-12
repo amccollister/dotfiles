@@ -26,7 +26,6 @@ man-pages
 mpd
 mpv
 nano
-neofetch
 pass
 patch
 pulsemixer
@@ -44,3 +43,4 @@ xf86-video-amdgpu
 xorg-server
 xorg-xinit
 xorg-xinput
+yakuake
