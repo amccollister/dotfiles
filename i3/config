@@ -20,20 +20,21 @@ workspace 1 output HDMI-A-0
 workspace 2 output DisplayPort-0
 
 # setup wallpaper
-exec_always feh --bg-scale ~/documents/space_mountain.png
+exec_always feh --bg-scale ~/.config/i3/wall/space.jpg
 
 # start programs
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id python ~/.config/polybar/scroll_text.py ~/.config/polybar/song.txt
 exec --no-startup-id echo " OFFLINE " > ~/.config/polybar/song.txt
-bindsym $mod+d exec rofi -lines 16 -width 25  -location 0 -show drun -sidebar-mode
+bindsym $mod+d exec rofi -lines 8 -width 25 -location 0 -modi drun -show drun -show-icons -font "Inconsolata 16"
+bindsym Mod1+Tab exec rofi -lines 8 -width 25 -location 0 -show window -show-icons -font "Inconsolata 16"
 exec --no-startup-id i3-msg 'workspace 2; exec firefox'
 exec --no-startup-id redshift
 exec --no-startup-id guake
 
 # Use loginctl lock-session or $mod+l to lock the system
-exec--no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy --nofork
-bindsym $mod+l exec i3lock-fancy-dualmonitor
+exec--no-startup-id xss-lock --transfer-sleep-lock -- multilockscreen -l --nofork
+bindsym $mod+l exec multilockscreen -l
 
 # kill focused window
 bindsym $mod+Shift+q kill

@@ -1,8 +1,8 @@
-i3lock-fancy-dualmonitors-git
+minecraft-launcher
+multilockscreen-git
 nerd-fonts-complete
 polybar
 spotify
 spotify-tui
 spotifyd-full
 steam-fonts
-yay
