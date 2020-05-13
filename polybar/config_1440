@@ -1,10 +1,4 @@
 [colors]
-# old colors for backup
-#background = #2C1338
-#background-alt = #4D2166
-#foreground = #E8C0E8
-#foreground-alt = #697B69
-
 background = #161616
 background-alt = #362636
 foreground = #DEDEDE
@@ -14,8 +8,8 @@ primary = #FFB52A
 secondary = #BF0005
 alert = #A6297A
 
-workspace = #4AA84D
-visible-workspace = #9541BF
+workspace = #9541BF
+visible-workspace = #666
 
 
 [settings]
@@ -78,6 +72,8 @@ enable-scroll = true
 wrapping-scroll = false
 
 label-mode-padding = 1
+
+# Not sure where these come into play
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
@@ -110,7 +106,7 @@ format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 exec = head ~/.config/polybar/song.txt -n 1
 ; TODO: make a systemctl timer to check the song periodically
-format-underline = ${colors.workspace}
+format-underline = #4AA84D
 
 [module/arch]
 type = custom/text
