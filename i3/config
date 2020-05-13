@@ -8,7 +8,7 @@ focus_follows_mouse no
 # setup gaps
 for_window [class=".*"] border pixel 0
 gaps inner 25
-gaps top 43
+gaps bottom 43
 
 # start a terminal
 bindsym $mod+Return exec kitty
@@ -28,7 +28,7 @@ exec --no-startup-id python ~/.config/polybar/scroll_text.py ~/.config/polybar/s
 exec --no-startup-id echo " OFFLINE " > ~/.config/polybar/song.txt
 bindsym $mod+d exec rofi -lines 8 -width 25 -location 0 -modi drun -show drun -show-icons -font "Inconsolata 16"
 bindsym Mod1+Tab exec rofi -lines 8 -width 25 -location 0 -show window -show-icons -font "Inconsolata 16"
-exec --no-startup-id i3-msg 'workspace 2; exec firefox'
+exec --no-startup-id i3-msg 'workspace 2; exec firefox'k
 exec --no-startup-id redshift
 exec --no-startup-id guake
 
