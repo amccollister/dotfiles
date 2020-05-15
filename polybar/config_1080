@@ -104,8 +104,7 @@ interval = 0.05
 format = <label>
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-exec = head ~/.config/polybar/song.txt -n 1
-; TODO: make a systemctl timer to check the song periodically
+exec = head ~/.config/polybar/scripts/song.txt -n 1
 format-underline = #4AA84D
 
 [module/arch]

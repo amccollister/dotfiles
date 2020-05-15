@@ -4,7 +4,7 @@ import sys
 import dbus
 
 MAX_LENGTH=25
-song_output = '  {song} - {artist}  ' # Four spaces for scroll
+song_output = '    {song} by {artist}    ' # Four spaces for scroll
 output = []
 song_file = sys.argv[1]
 
@@ -28,6 +28,7 @@ try:
     if status == "Playing":
         for i in range(len(song_output)):
             output.append("|"+(song_output[i:]+song_output[:i])[:MAX_LENGTH]+"|")
+        #output = song_output
     else:
         output.append(" PAUSED ")
 
@@ -43,3 +44,4 @@ except Exception as e:
 with open(song_file, "w") as f:
     for line in output:
         f.write(line+"\n")
+    #f.write(output)
