@@ -32,6 +32,7 @@ rofi
 steam
 thunar
 traceroute
+ttf-font-awesome
 vi
 wine-gecko
 wine-mono
