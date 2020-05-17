@@ -107,12 +107,14 @@ format-prefix-foreground = ${colors.foreground-alt}
 exec = head ~/.config/polybar/scripts/song.txt -n 1
 format-underline = #4AA84D
 
+
 [module/arch]
 type = custom/text
 content = "%{T5}%{T-}"
 content-foreground = #1378AA
 content-margin = 0
-# click-left = (special rofi script)
+click-left = rofi -lines 8 -width 25 -location 0 -modi drun -show drun -show-icons -font "Inconsolata 16"
+
 
 [module/sp]
 type = custom/text
