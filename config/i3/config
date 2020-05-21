@@ -30,9 +30,9 @@ bindsym $mod+d exec rofi -lines 8 -width 25 -location 0 -modi drun -show drun -s
 bindsym Mod1+Tab exec rofi -lines 8 -width 25 -location 0 -show window -show-icons -font "Inconsolata 16"
 exec --no-startup-id i3-msg 'workspace 2; exec firefox'
 exec --no-startup-id redshift
-#exec --no-startup-id guake
 exec --no-startup-id kglobalaccel5
 exec --no-startup-id yakuake
+exec --no-startup-id redshift -l manual
 
 # Use loginctl lock-session or $mod+l to lock the system
 exec--no-startup-id xss-lock --transfer-sleep-lock -- multilockscreen -l --nofork
