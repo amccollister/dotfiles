@@ -125,7 +125,7 @@ click-left = spotify > /dev/null 2>&1 &
 
 [module/ff]
 type = custom/text
-content = 龜
+content = 
 content-foreground = #FF6611
 click-left = firefox &
 

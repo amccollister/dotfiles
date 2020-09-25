@@ -4,7 +4,7 @@ import sys
 import dbus
 
 MAX_LENGTH=25
-song_output = '    {song} by {artist}    ' # Four spaces for scroll
+song_output = '    {song} - {artist}    ' # Four spaces for scroll
 output = []
 song_file = sys.argv[1]
 
