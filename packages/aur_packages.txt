@@ -1,6 +1,8 @@
+discord_arch_electron
 lightdm-webkit-theme-aether
 minecraft-launcher
 multilockscreen-git
+multimc5
 nerd-fonts-complete
 polybar
 spotify
@@ -8,3 +10,5 @@ spotify-tui
 spotifyd-full
 steam-fonts
 ttf-font-logos
+yay
+zoom
