@@ -18,6 +18,7 @@ exec --no-startup-id xrandr --output DisplayPort-0 --mode 2560x1440 --rate 144 -
 exec --no-startup-id xinput --set-prop "Logitech G502 HERO SE" "libinput Accel Speed" -1
 workspace 1 output HDMI-A-0
 workspace 2 output DisplayPort-0
+workspace 3 output DisplayPort-0
 
 # setup wallpaper
 exec_always feh --bg-scale ~/.config/i3/wall/space.jpg
@@ -30,6 +31,7 @@ bindsym $mod+d exec rofi -lines 8 -width 25 -location 0 -modi drun -show drun -s
 bindsym Mod1+Tab exec rofi -lines 8 -width 25 -location 0 -show window -show-icons -font "Inconsolata 16"
 exec --no-startup-id i3-msg 'workspace 1; exec discord'
 exec --no-startup-id i3-msg 'workspace 2; exec firefox'
+exec --no-startup-id i3-msg 'workspace 3; exec steam'
 exec --no-startup-id kglobalaccel5
 exec --no-startup-id yakuake
 exec --no-startup-id redshift -l manual
@@ -72,9 +74,22 @@ for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
 for_window [class="yakuake"] floating enable
 
+# Steam Classification taken from https://github.com/z3ntu/dotfiles/blob/fb3f5a25205b45234bdba8da7b19d63cd0d3db25/i3/.config/i3/config#L55
+for_window [class="Steam" title="Friends*"] floating enable
+for_window [class="Steam" title="Steam - News"] floating enable
+for_window [class="Steam" title=".* - Chat"] floating enable
+for_window [class="Steam" title="Settings"] floating enable
+for_window [class="Steam" title=".* - event started"] floating enable
+for_window [class="Steam" title=".* CD key"] floating enable
+for_window [class="Steam" title="Steam - Self Updater"] floating enable
+for_window [class="Steam" title="Screenshot Uploader"] floating enable
+for_window [class="Steam" title="Steam Guard - Computer Authorization Required"] floating enable
+for_window [title="Steam Keyboard"] floating enable
+
 # make sure startup prorams are assigned correctly
 for_window [class="discord"] move container to workspace 1
 for_window [class="firefox"] move container to workspace 2
+for_window [class="Steam"] move container to workspace 3
 
 
 # defining workspaces
