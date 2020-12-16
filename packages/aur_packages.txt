@@ -7,7 +7,6 @@ nerd-fonts-complete
 polybar
 spotify
 spotify-tui
-spotifyd-full
 steam-fonts
 ttf-font-logos
 yay

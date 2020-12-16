@@ -30,6 +30,7 @@ pkgconf
 pulsemixer
 redshift
 rofi
+spotifyd
 steam
 thunar
 ttf-font-awesome
