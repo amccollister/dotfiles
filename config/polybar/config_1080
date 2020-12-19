@@ -275,7 +275,7 @@ animation-charging-framerate = 250
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
-hwmon-path = /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon0/temp1_input
+hwmon-path = /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon0/temp2_input
 base-temperature = 25
 warn-temperature = 75
 
