@@ -36,6 +36,9 @@ exec --no-startup-id kglobalaccel5
 exec --no-startup-id yakuake
 exec --no-startup-id redshift -l manual
 
+# Take a screenshot | Proud of my self on figuring this one out! :)
+bindsym Print --release exec "import png:- | xclip -selection clipboard -t image/png"
+
 # Use loginctl lock-session or $mod+l to lock the system
 exec--no-startup-id xss-lock --transfer-sleep-lock -- multilockscreen -l --nofork
 bindsym $mod+l exec multilockscreen -l
