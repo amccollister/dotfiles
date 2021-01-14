@@ -26,7 +26,6 @@ openjdk8-src
 pacman-contrib
 pass
 patch
-pkgconf
 pulsemixer
 redshift
 rofi
