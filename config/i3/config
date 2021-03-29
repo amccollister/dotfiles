@@ -27,8 +27,8 @@ exec_always feh --bg-scale ~/.config/i3/wall/space.jpg
 exec_always --no-startup-id ~/.config/polybar/scripts/launch.sh
 exec --no-startup-id python ~/.config/polybar/scripts/scroll_text.py ~/.config/polybar/scripts/song.txt
 exec --no-startup-id echo " OFFLINE " > ~/.config/polybar/scripts/song.txt
-bindsym $mod+d exec rofi -lines 8 -width 25 -location 0 -modi drun -show drun -show-icons -font "Inconsolata 16"
-bindsym Mod1+Tab exec rofi -lines 8 -width 25 -location 0 -show window -show-icons -font "Inconsolata 16"
+bindsym $mod+d exec rofi -lines 8 -width 25 -location 0 -modi drun -show drun -show-icons -font "Inconsolata Nerd Font Mono 16"
+bindsym Mod1+Tab exec rofi -lines 8 -width 25 -location 0 -show window -show-icons -font "Inconsolata Nerd Font Mono 16"
 exec --no-startup-id i3-msg 'workspace 1; exec discord'
 exec --no-startup-id i3-msg 'workspace 2; exec firefox'
 exec --no-startup-id i3-msg 'workspace 3; exec steam'
