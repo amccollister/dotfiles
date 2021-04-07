@@ -1,9 +1,12 @@
+anydesk-bin
 discord_arch_electron
+electron9-bin
 lightdm-webkit-theme-aether
 minecraft-launcher
 multilockscreen-git
 multimc5
 nerd-fonts-complete
+path-of-building-community-git
 polybar
 spotify
 spotify-tui
