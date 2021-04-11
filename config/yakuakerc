@@ -2,7 +2,7 @@
 Frames=25
 
 [Appearance]
-Skin=yakuake-breeze_perfect_dark-2.0
+Skin=ROUNDED-DARK
 SkinInstalledWithKns=true
 Translucency=true
 
@@ -13,6 +13,10 @@ DefaultProfile=default.profile
 FirstRun=false
 
 [DownloadDialog Settings]
+DisplayPort-0 HDMI-A-0 Height 1920x1080=411
+DisplayPort-0 HDMI-A-0 Height 2560x1440=411
+DisplayPort-0 HDMI-A-0 Width 1920x1080=700
+DisplayPort-0 HDMI-A-0 Width 2560x1440=700
 Height 1080=408
 Width 1920=700
 
