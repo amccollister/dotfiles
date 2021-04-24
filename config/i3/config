@@ -12,6 +12,7 @@ gaps bottom 40
 
 # start a terminal
 bindsym $mod+Return exec kitty
+bindsym $mod+Escape nop kitti3
 
 # setup monitors, workspaces and mouse speed with xrandr (double check the actual mouse section; a kernel update messed up the mouse speed)
 exec --no-startup-id xrandr --output DisplayPort-0 --mode 2560x1440 --rate 144 --output HDMI-A-0 --mode 1920x1080 --rate 60 --left-of DisplayPort-0
@@ -30,13 +31,12 @@ exec --no-startup-id python ~/.config/polybar/scripts/scroll_text.py ~/.config/p
 exec --no-startup-id echo " OFFLINE " > ~/.config/polybar/scripts/song.txt
 bindsym $mod+d exec rofi -lines 8 -width 25 -location 0 -modi drun -show drun -show-icons -font "Inconsolata Nerd Font Mono 16"
 bindsym Mod1+Tab exec rofi -lines 8 -width 25 -location 0 -show window -show-icons -font "Inconsolata Nerd Font Mono 16"
-exec --no-startup-id i3-msg 'workspace 1; exec discord'
+exec --no-startup-id i3-msg 'workspace 1; exec discord-canary'
 exec --no-startup-id i3-msg 'workspace 2; exec firefox'
 exec --no-startup-id i3-msg 'workspace 3; exec steam'
-exec --no-startup-id kglobalaccel5
-exec --no-startup-id yakuake
 exec --no-startup-id picom
 exec --no-startup-id redshift -l manual
+exec --no-startup-id kitti3 -s 0.4 0.5
 
 # Take a screenshot | Proud of my self on figuring this one out! :)
 bindsym Print --release exec "import png:- | xclip -selection clipboard -t image/png"
@@ -77,9 +77,7 @@ floating_modifier $mod
 # pop-ups should be floating
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
-for_window [class="yakuake"] floating enable
 for_window [class="kitty"] floating enable
-for_window [class="Thunar"] floating enable
 
 # Steam Classification taken from https://github.com/z3ntu/dotfiles/blob/fb3f5a25205b45234bdba8da7b19d63cd0d3db25/i3/.config/i3/config#L55
 for_window [class="Steam" title="Friends*"] floating enable

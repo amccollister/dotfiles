@@ -1,1 +1,2 @@
-rofi.theme: ~/.config/rofi/themes/slate.rasi
+@import "~/.cache/wal/colors-rofi-dark"
+rofi.theme: ~/.cache/wal/colors-rofi-dark
