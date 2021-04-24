@@ -9,14 +9,15 @@ autorandr
 base
 binwalk
 bison
-code
+breeze-icons
 firefox
 gdb
 glances
+gtk2fontsel
 iwd
 java-atk-wrapper-openjdk8
-kitty
 krita
+libreoffice-fresh
 linux-docs
 linux-headers
 make
@@ -30,11 +31,13 @@ openjdk8-src
 pacman-contrib
 pass
 patch
+picom
 pulsemixer
+python-pygments
+ranger
 redshift
 rofi
 spotifyd
-steam
 thunar
 ttf-font-awesome
 unzip
@@ -47,4 +50,3 @@ xf86-video-amdgpu
 xorg-server
 xorg-xinit
 xorg-xinput
-yakuake
