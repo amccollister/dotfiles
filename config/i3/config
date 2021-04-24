@@ -22,21 +22,22 @@ workspace 2 output DisplayPort-0
 workspace 3 output DisplayPort-0
 
 # setup wallpaper
-exec_always feh --bg-scale ~/.config/i3/wall/disco_elysium_main.jpg #space.jpg
-
+# exec_always feh --bg-scale ~/.config/i3/wall/disco_elysium_main.jpg
+exec_always wal -i ~/.config/i3/wall/disco_elysium_main.jpg
 
 # start programs
 exec_always --no-startup-id ~/.config/polybar/scripts/launch.sh
 exec --no-startup-id python ~/.config/polybar/scripts/scroll_text.py ~/.config/polybar/scripts/song.txt
 exec --no-startup-id echo " OFFLINE " > ~/.config/polybar/scripts/song.txt
-bindsym $mod+d exec rofi -lines 8 -width 25 -location 0 -modi drun -show drun -show-icons -font "Inconsolata Nerd Font Mono 16"
-bindsym Mod1+Tab exec rofi -lines 8 -width 25 -location 0 -show window -show-icons -font "Inconsolata Nerd Font Mono 16"
-exec --no-startup-id i3-msg 'workspace 1; exec discord-canary'
+bindsym $mod+d exec rofi -lines 16 -columns 2 -width 40 -location 0 -show drun -show-icons -font "Hack Nerd Font 16"
+bindsym Mod1+Tab exec rofi -lines 8 -width 25 -location 0 -show window -show-icons -font "Hack Nerd Font 16"
+
+exec --no-startup-id i3-msg 'workspace 1; exec discord'
 exec --no-startup-id i3-msg 'workspace 2; exec firefox'
 exec --no-startup-id i3-msg 'workspace 3; exec steam'
 exec --no-startup-id picom
 exec --no-startup-id redshift -l manual
-exec --no-startup-id kitti3 -s 0.4 0.5
+exec_always kitti3 -s 0.4 0.5 &
 
 # Take a screenshot | Proud of my self on figuring this one out! :)
 bindsym Print --release exec "import png:- | xclip -selection clipboard -t image/png"
