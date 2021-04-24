@@ -28,13 +28,13 @@ confirm_exit() {
 
 # Message
 msg() {
-	rofi -theme "$dir/message.rasi" -e "Available Options  -  yes / y / no / n"
+	rofi -theme "$dir/message.rasi" -e "Options - (y)es / (n)o"
 }
 
-# Variable passed to rofi
-options="$lock\n$suspend\n$logout\n$reboot\n$shutdown"
+# Variable passed to rofi -- Removed suspend
+options="$lock\n$logout\n$reboot\n$shutdown"
 
-chosen="$(echo -e "$options" | $rofi_command -p "Uptime: $uptime" -dmenu -selected-row 0)"
+chosen="$(echo -e "$options" | $rofi_command -p "$uptime" -dmenu -selected-row 0)"
 case $chosen in
     $shutdown)
 		ans=$(confirm_exit &)
@@ -57,7 +57,9 @@ case $chosen in
         fi
         ;;
     $lock)
-		if [[ -f /usr/bin/i3lock ]]; then
+		if [[ -f /usr/bin/multilockscreen ]]; then
+			multilockscreen -l
+		elif [[ -f /usr/bin/i3lock ]]; then
 			i3lock
 		elif [[ -f /usr/bin/betterlockscreen ]]; then
 			betterlockscreen -l

@@ -8,7 +8,7 @@
  */
 
 configuration {
-	font:							"Iosevka Nerd Font 16";
+	font:							"Hack Nerd Font 16";
     show-icons:                     true;
 	icon-theme: 					"Papirus";
     display-drun: 					"";
@@ -28,7 +28,7 @@ window {
 	border:							0px;
 	border-color:					@bg1;
     border-radius:                  0px;
-	width:							15%;
+	width:							12.5%;
     location:                       center;
     x-offset:                       0;
     y-offset:                       0;
@@ -78,7 +78,7 @@ listview {
     background-color:               @al;
     padding:                        10px 10px 10px 10px;
     columns:                        1;
-    lines:                          5;
+    lines:                          4;
     spacing:                        5px;
     cycle:                          true;
     dynamic:                        true;
