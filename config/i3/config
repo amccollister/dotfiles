@@ -24,7 +24,7 @@ workspace 3 output DisplayPort-0
 
 # setup wallpaper
 # exec_always feh --bg-scale ~/.config/i3/wall/disco_elysium_main.jpg
-exec_always wal -i ~/.config/i3/wall/disco_elysium_main.jpg
+exec_always ~/.config/i3/wall/set_wal.sh ~/.config/i3/wall/disco_elysium_main.jpg
 
 # start programs
 exec_always --no-startup-id ~/.config/polybar/colorblocks/launch.sh
