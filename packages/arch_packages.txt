@@ -17,6 +17,7 @@ gtk2fontsel
 i3-gaps
 iwd
 java-atk-wrapper-openjdk8
+kitty
 krita
 libreoffice-fresh
 linux-docs
