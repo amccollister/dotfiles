@@ -39,6 +39,7 @@ python-pygments
 ranger
 redshift
 rofi
+steam
 spotifyd
 ttf-font-awesome
 unzip
