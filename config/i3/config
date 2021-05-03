@@ -24,7 +24,7 @@ workspace 3 output DisplayPort-0
 
 # setup wallpaper
 # exec_always feh --bg-scale ~/.config/i3/wall/disco_elysium_main.jpg
-exec_always ~/.config/i3/wall/set_wal.sh ~/.config/i3/wall/disco_elysium_main.jpg
+exec_always ~/.config/i3/wall/set_wal.sh ~/.config/i3/wall/disco_elysium_splash.png
 
 # start programs
 exec_always --no-startup-id ~/.config/polybar/colorblocks/launch.sh
@@ -79,6 +79,7 @@ floating_modifier $mod
 # pop-ups should be floating
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
+for_window [class="obs"] floating enable
 # for_window [class="kitty"] floating enable
 
 # Steam Classification taken from https://github.com/z3ntu/dotfiles/blob/fb3f5a25205b45234bdba8da7b19d63cd0d3db25/i3/.config/i3/config#L55
