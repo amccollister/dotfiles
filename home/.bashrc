@@ -5,7 +5,9 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# apply the color :)
+# apply the aliases and color :)
+alias abort='sudo pacman -Qtdq | sudo pacman -Rns -'
+alias yeet='sudo pacman -Rns'
 alias ls='ls --color=auto'
 alias mv='mv -i'
 PS1="\[\033[01;35m\][\[\033[01;32m\]\u@\h \[\033[01;34m\]\W\[\033[01;35m\]]\[\033[00m\]\$ "
@@ -23,3 +25,4 @@ eval "$(dircolors)"
 source ~/.cache/wal/colors-tty.sh
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
