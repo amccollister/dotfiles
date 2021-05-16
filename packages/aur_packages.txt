@@ -1,4 +1,5 @@
 anydesk-bin
+chatterino2-git
 discord_arch_electron
 kitti3
 lightdm-webkit-theme-aether-git
