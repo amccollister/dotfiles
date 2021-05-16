@@ -22,11 +22,16 @@ if [[ $iatest > 0 ]]; then bind "set show-all-if-ambiguous on"; fi
 
 # apply the aliases and color :)
 alias abort='sudo pacman -Qtdq | sudo pacman -Rns -'
-alias yeet='sudo pacman -Rns'
 alias ls='ls --color=auto'
 alias mv='mv -i'
 PS1="\[\033[01;35m\][\[\033[01;32m\]\u@\h \[\033[01;34m\]\W\[\033[01;35m\]]\[\033[00m\]\$ "
 eval "$(dircolors)"
+
+
+# define functions
+pacfind(){ pacman -Sl | awk '{print $2($4=="" ? "" : " *")}' | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S; }
+aurfind(){ yay -Sl | awk '{print $2($4=="" ? "" : " *")}' | fzf --multi --preview 'pacman -Si {1}' | xargs       -ro sudo pacman -S; }
+yeet(){ pacman -Qqe | fzf --multi --preview 'pacman -Qi {1}' | xargs -ro sudo pacman -Rns; }
 
 # Use bash-completion, if available
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
