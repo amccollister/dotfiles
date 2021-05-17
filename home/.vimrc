@@ -16,6 +16,8 @@ call plug#begin('~/.vim/plugged')
  Plug 'preservim/nerdcommenter'
 
  Plug 'frazrepo/vim-rainbow'
+ let g:rainbow_active = 1
+
  Plug 'airblade/vim-gitgutter'
  Plug 'tpope/vim-surround'
 
@@ -30,6 +32,7 @@ call plug#end()
 syntax on
 
 " For plug-ins to load correctly.
+filetype plugin on
 filetype plugin indent on
 
 " Turn off modelines
@@ -46,9 +49,9 @@ set shiftwidth=4
 set softtabstop=4
 set autoindent
 set noshiftround
+
 " set noexpandtab | Stop python from undoing it
 autocmd FileType * setlocal noexpandtab
-
 " Display 5 lines above/below the cursor when scrolling with a mouse.
 set scrolloff=5
 " Fixes common backspace problems
@@ -70,17 +73,16 @@ set list
 set listchars=tab:.\ ,trail:•,extends:#,nbsp:.
 
 " Show line numbers
-set number
-
+set number relativenumber
 
 " Highlight matching search patterns
 set hlsearch
 " Enable incremental search
 set incsearch
+" Include only uppercase words with uppercase search term
+" set smartcase
 " Include matching uppercase words with lowercase search term
 set ignorecase
-" Include only uppercase words with uppercase search term
-set smartcase
 
 " Store info from no more than 100 files at a time, 9999 lines of text, 100kb of data. Useful for copying large amounts of data between files.
 set viminfo='100,<9999,s100
@@ -88,6 +90,10 @@ set viminfo='100,<9999,s100
 " Map the <Space> key to toggle a selected fold opened/closed.
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 vnoremap <Space> zf
+
+" Map CTRL+Backspace and Delete to delete words
+noremap! <C-BS> <C-w>
+noremap! <C-h> <C-w>
 
 " Load proper colorscheme from wal
 colorscheme wal
