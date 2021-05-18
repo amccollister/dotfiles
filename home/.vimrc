@@ -8,24 +8,25 @@ set nocompatible
 filetype off
 
 call plug#begin('~/.vim/plugged')
+
 " Use wal color scheme
  Plug 'dylanaraps/wal.vim'
 
 " Install wanted plugins
  Plug 'preservim/nerdtree'
  Plug 'preservim/nerdcommenter'
-
- Plug 'frazrepo/vim-rainbow'
- let g:rainbow_active = 1
-
  Plug 'airblade/vim-gitgutter'
  Plug 'tpope/vim-surround'
-
  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
  Plug 'junegunn/fzf.vim'
-
  Plug 'dense-analysis/ale'
+ Plug 'frazrepo/vim-rainbow'
+	let g:rainbow_active = 1
  Plug 'itchyny/lightline.vim'
+	let g:lightline = {'colorscheme':'seoul256'}
+	set laststatus=2
+	set noshowmode
+
 call plug#end()
 
 " Turn on syntax highlighting.
@@ -60,11 +61,7 @@ set backspace=indent,eol,start
 " Speed up scrolling in Vim
 set ttyfast
 
-" Status bar
-set laststatus=0
-
 " Display options
-set showmode
 set showcmd
 
 " Display different types of white spaces.
