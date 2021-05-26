@@ -92,5 +92,9 @@ vnoremap <Space> zf
 noremap! <C-BS> <C-w>
 noremap! <C-h> <C-w>
 
+" Map F5 to run the python file
+autocmd FileType python map <buffer> <F5> :w<CR>:exec '!clear; python' shellescape(@%, 1)<CR>
+autocmd FileType python imap <buffer> <F5> <esc>:w<CR>:exec '!clear; python' shellescape(@%, 1)<CR>
+
 " Load proper colorscheme from wal
 colorscheme wal
