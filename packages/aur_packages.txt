@@ -1,6 +1,7 @@
 anydesk-bin
 chatterino2-git
 discord_arch_electron
+i3lock-color-git
 kitti3
 lightdm-webkit-theme-aether-git
 minecraft-launcher
@@ -8,6 +9,7 @@ multilockscreen-git
 multimc5
 nerd-fonts-complete
 path-of-building-community-git
+picom-git
 polybar
 python-pywalfox
 python-wal-steam-git
