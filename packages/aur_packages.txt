@@ -19,3 +19,4 @@ steam-fonts
 ttf-font-logos
 vim-plug
 yay
+zoom
