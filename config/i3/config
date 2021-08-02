@@ -26,6 +26,7 @@ workspace 3 output DisplayPort-0
 exec_always ~/.config/i3/wall/set_wal.sh ~/downloads/wallpapers/mystic_lake.jpg
 
 # start programs
+exec --no-startup-id easyeffects --gapplication-service
 exec_always --no-startup-id ~/.config/polybar/colorblocks/launch.sh
 # exec --no-startup-id python ~/.config/polybar/scripts/scroll_text.py ~/.config/polybar/scripts/song.txt
 # exec --no-startup-id echo " OFFLINE " > ~/.config/polybar/scripts/song.txt
