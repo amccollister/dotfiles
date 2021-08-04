@@ -27,18 +27,19 @@ exec_always ~/.config/i3/wall/set_wal.sh ~/downloads/wallpapers/mystic_lake.jpg
 
 # start programs
 exec --no-startup-id easyeffects --gapplication-service
-exec_always --no-startup-id ~/.config/polybar/colorblocks/launch.sh
-# exec --no-startup-id python ~/.config/polybar/scripts/scroll_text.py ~/.config/polybar/scripts/song.txt
-# exec --no-startup-id echo " OFFLINE " > ~/.config/polybar/scripts/song.txt
-bindsym $mod+d exec ~/.config/polybar/colorblocks/scripts/launcher.sh
-bindsym Mod1+Tab exec ~/.config/polybar/colorblocks/scripts/window_choose.sh
-
 exec --no-startup-id i3-msg 'workspace 1; exec discord'
 exec --no-startup-id i3-msg 'workspace 2; exec firefox'
 exec --no-startup-id i3-msg 'workspace 3; exec steam'
 exec --no-startup-id picom -b --experimental-backends
 exec --no-startup-id redshift -l manual
 exec_always kitti3 -s 0.4 0.5 &
+
+# start polybar
+exec_always --no-startup-id ~/.config/polybar/colorblocks/launch.sh
+# exec --no-startup-id python ~/.config/polybar/scripts/scroll_text.py ~/.config/polybar/scripts/song.txt
+# exec --no-startup-id echo " OFFLINE " > ~/.config/polybar/scripts/song.txt
+bindsym $mod+d exec ~/.config/polybar/colorblocks/scripts/launcher.sh
+bindsym Mod1+Tab exec ~/.config/polybar/colorblocks/scripts/window_choose.sh
 
 # Take a screenshot | Proud of my self on figuring this one out! :)
 bindsym Print --release exec "import png:- | xclip -selection clipboard -t image/png"
