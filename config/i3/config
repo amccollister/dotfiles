@@ -34,13 +34,6 @@ exec --no-startup-id picom -b --experimental-backends
 exec --no-startup-id redshift -l manual
 exec_always kitti3 -s 0.4 0.5 &
 
-# start polybar
-exec_always --no-startup-id ~/.config/polybar/colorblocks/launch.sh
-# exec --no-startup-id python ~/.config/polybar/scripts/scroll_text.py ~/.config/polybar/scripts/song.txt
-# exec --no-startup-id echo " OFFLINE " > ~/.config/polybar/scripts/song.txt
-bindsym $mod+d exec ~/.config/polybar/colorblocks/scripts/launcher.sh
-bindsym Mod1+Tab exec ~/.config/polybar/colorblocks/scripts/window_choose.sh
-
 # Take a screenshot | Proud of my self on figuring this one out! :)
 bindsym Print --release exec "import png:- | xclip -selection clipboard -t image/png"
 
@@ -161,3 +154,10 @@ mode "resize" {
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
 }
+
+# start polybar last to ensure modules load properly
+exec_always --no-startup-id ~/.config/polybar/colorblocks/launch.sh
+# exec --no-startup-id python ~/.config/polybar/scripts/scroll_text.py ~/.config/polybar/scripts/song.txt
+# exec --no-startup-id echo " OFFLINE " > ~/.config/polybar/scripts/song.txt
+bindsym $mod+d exec ~/.config/polybar/colorblocks/scripts/launcher.sh
+bindsym Mod1+Tab exec ~/.config/polybar/colorblocks/scripts/window_choose.sh
