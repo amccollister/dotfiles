@@ -43,7 +43,7 @@ prompt {
 }
 
 entry {
-    background-color:               @bg2;
+    background-color:               @bg1;
     text-color:                     @fga;
     placeholder-color:              @fga;
     expand:                         true;
@@ -110,7 +110,12 @@ element-text {
 element selected {
     background-color:               @bg;
     text-color:                     @bg3;
-	border:							0px;
+    border:                         0px;
     border-radius:                  0px;
-    border-color:                  	@bg;
+    border-color:                   @bg;
+}
+
+element-text, element-icon {
+    background-color: inherit;
+    text-color:       inherit;
 }
