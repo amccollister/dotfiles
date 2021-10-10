@@ -7,7 +7,7 @@ DIR="$HOME/.config/polybar/colorblocks"
 killall -q polybar
 
 # Wait until the processes have been shut down
-while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
+while pgrep -u $UID -x polybar >/dev/null; do sleep 2; done
 
 # Launch the bar
 polybar -r -q main -c "$DIR"/config.ini &
