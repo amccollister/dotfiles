@@ -44,8 +44,8 @@ exec_always kitti3 -s 0.4 0.5 &
 bindsym Print --release exec "import png:- | xclip -selection clipboard -t image/png"
 
 # Use loginctl lock-session or $mod+l to lock the system
-exec --no-startup-id xss-lock --transfer-sleep-lock -- multilockscreen -l --nofork
-bindsym $mod+l exec multilockscreen -l
+exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l --nofork
+bindsym $mod+l exec betterlockscreen -l
 
 # kill focused window
 bindsym $mod+Shift+q kill
