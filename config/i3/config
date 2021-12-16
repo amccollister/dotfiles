@@ -82,6 +82,7 @@ for_window [window_role="task_dialog"] floating enable
 for_window [class="obs"] floating enable
 for_window [class="mpv"] floating enable
 for_window [class="chatterino"] floating enable
+for_window [class="Lutris"] floating enable
 
 # Steam Classification taken from https://github.com/z3ntu/dotfiles/blob/fb3f5a25205b45234bdba8da7b19d63cd0d3db25/i3/.config/i3/config#L55
 # Steam friend chat windows just have the name. Thus, added floating for all Steam titles except main window.
