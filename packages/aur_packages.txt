@@ -7,10 +7,10 @@ lightdm-webkit-theme-aether-git
 minecraft-launcher
 multimc5
 nerd-fonts-complete
+obsidian
 path-of-building-community-git
 picom-git
 polybar
-python-pywalfox
 python-wal-steam-git
 spotify
 spotify-tui

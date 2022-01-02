@@ -38,6 +38,7 @@ grub
 gucharmap
 gvim
 gzip
+helvum
 i3-gaps
 i3status
 iwd
@@ -60,6 +61,7 @@ linux-docs
 linux-firmware
 linux-headers
 lua
+lutris
 m4
 make
 man-db
@@ -69,6 +71,7 @@ mesa-vdpau
 mpv
 nano
 neofetch
+nextcloud-client
 ntfs-3g
 obs-studio
 openjdk8-doc
