@@ -34,6 +34,7 @@ exec --no-startup-id i3-msg 'workspace 3; exec discord --ignore-gpu-blocklist --
 exec --no-startup-id picom -b --experimental-backends
 exec --no-startup-id redshift -l manual
 exec_always kitti3 -s 0.4 0.5 &
+exec --no-startup-id nextcloud --background &
 
 # temporary pipewire fix for 0.3.33
 # should be fixed in pipewire 0.3.34 fingers crossed
