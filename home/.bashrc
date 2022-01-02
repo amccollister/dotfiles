@@ -27,6 +27,8 @@ alias mv='mv -i'
 PS1="\[\033[01;35m\][\[\033[01;32m\]\u@\h \[\033[01;34m\]\W\[\033[01;35m\]]\[\033[00m\]\$ "
 eval "$(dircolors)"
 
+# make discord suck less
+alias discord='discord --ignore-gpu-blocklist --disable-features=UseOzonePlatform --enable-features=VaapiVideoDecoder --use-gl=desktop --enable-gpu-rasterization --enable-zero-copy'
 
 # define functions
 pacfind(){ pacman -Sl | awk '{print $2($4=="" ? "" : " *")}' | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S; }
