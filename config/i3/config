@@ -10,6 +10,7 @@ for_window [class=".*"] border pixel 0
 gaps inner 25
 gaps bottom 40
 workspace $ws3 gaps bottom 0
+workspace $ws4 gaps bottom 0
 
 # start a terminal
 bindsym $mod+Return exec kitty
@@ -31,6 +32,8 @@ exec --no-startup-id easyeffects --gapplication-service
 exec --no-startup-id i3-msg 'workspace 1; exec firefox'
 exec --no-startup-id i3-msg 'workspace 2; exec steam'
 exec --no-startup-id i3-msg 'workspace 3; exec discord --ignore-gpu-blocklist --disable-features=UseOzonePlatform --enable-features=VaapiVideoDecoder --use-gl=desktop --enable-gpu-rasterization --enable-zero-copy'
+exec --no-startup-id i3-msg 'workspace 4; exec obsidian'
+
 exec --no-startup-id picom -b --experimental-backends
 exec --no-startup-id redshift -l manual
 exec_always kitti3 -s 0.4 0.5 &
@@ -105,6 +108,7 @@ for_window [class="Steam" title="^Steam$"] floating disable
 for_window [class="firefox"] move container to workspace 1
 for_window [class="Steam"] move container to workspace 2
 for_window [class="discord"] move container to workspace 3
+for_window [class="obsidian"] move container to workspace 4
 
 
 # defining workspaces
