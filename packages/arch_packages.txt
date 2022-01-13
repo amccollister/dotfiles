@@ -30,6 +30,7 @@ gcc
 gdb
 gettext
 git
+gnome-keyring
 gnu-netcat
 grep
 groff
@@ -44,9 +45,6 @@ iwd
 java-atk-wrapper-openjdk8
 jdk8-openjdk
 kitty
-kwallet
-kwallet-pam
-kwalletmanager
 lib32-libva-mesa-driver
 lib32-mesa
 lib32-mesa-vdpau
