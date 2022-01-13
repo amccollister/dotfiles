@@ -9,7 +9,6 @@ automake
 autorandr
 base
 bash-completion
-bashtop
 bind
 binutils
 binwalk
@@ -45,6 +44,9 @@ iwd
 java-atk-wrapper-openjdk8
 jdk8-openjdk
 kitty
+kwallet
+kwallet-pam
+kwalletmanager
 lib32-libva-mesa-driver
 lib32-mesa
 lib32-mesa-vdpau
@@ -83,7 +85,6 @@ pacman
 pacman-contrib
 pass
 patch
-pavucontrol
 pipewire
 pipewire-alsa
 pipewire-media-session
@@ -99,15 +100,12 @@ ranger
 redshift
 rofi
 sed
-sl
 spotifyd
 steam
 streamlink
 sudo
 texinfo
-thunderbird
 tk
-torbrowser-launcher
 tree
 ttf-font-awesome
 ttf-liberation

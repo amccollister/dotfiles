@@ -23,9 +23,10 @@ exec --no-startup-id xinput --set-prop "Glorious Model O" "libinput Accel Speed"
 workspace 1 output DisplayPort-0
 workspace 2 output DisplayPort-0
 workspace 3 output HDMI-A-0
+workspace 4 output HDMI-A-0
 
 # setup wallpaper
-exec_always ~/.config/i3/wall/set_wal.sh ~/downloads/wallpapers/mystic_lake.jpg
+exec_always ~/.config/i3/wall/set_wal.sh ~/downloads/wallpapers/reunion.png
 
 # start programs
 exec --no-startup-id easyeffects --gapplication-service
