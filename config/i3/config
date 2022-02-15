@@ -5,12 +5,10 @@ set $mod Mod4
 font pango:monospace 8
 focus_follows_mouse no
 
-# setup gaps + workspace specific (side monitor)
+# setup gaps (inner only)
 for_window [class=".*"] border pixel 0
-gaps inner 25
-gaps bottom 40
-workspace $ws3 gaps bottom 0
-workspace $ws4 gaps bottom 0
+gaps inner 20
+gaps outer -20
 
 # start a terminal
 bindsym $mod+Return exec kitty
@@ -29,7 +27,6 @@ workspace 4 output HDMI-A-0
 exec_always ~/.config/i3/wall/set_wal.sh ~/downloads/wallpapers/reunion.png
 
 # start programs
-exec --no-startup-id easyeffects --gapplication-service
 exec --no-startup-id i3-msg 'workspace 1; exec firefox'
 exec --no-startup-id i3-msg 'workspace 2; exec steam'
 exec --no-startup-id i3-msg 'workspace 3; exec discord --ignore-gpu-blocklist --disable-features=UseOzonePlatform --enable-features=VaapiVideoDecoder --use-gl=desktop --enable-gpu-rasterization --enable-zero-copy'
@@ -37,13 +34,9 @@ exec --no-startup-id i3-msg 'workspace 4; exec obsidian'
 
 exec --no-startup-id picom -b --experimental-backends
 exec --no-startup-id redshift -l manual
-exec_always kitti3 -s 0.4 0.5 &
+exec_always kitti3 -s 0.5 0.5 &
 exec --no-startup-id nextcloud --background &
-
-# temporary pipewire fix for 0.3.33
-# should be fixed in pipewire 0.3.34 fingers crossed
-# https://www.reddit.com/r/archlinux/comments/ozcxpa/pipewire_how_to_set_default_sink_persistently/
-# exec_always --no-startup-id ~/scripts/pw_defaults.sh
+exec --no-startup-id easyeffects --gapplication-service
 
 # Take a screenshot | Proud of my self on figuring this one out! :)
 bindsym Print --release exec "import png:- | xclip -selection clipboard -t image/png"
@@ -81,29 +74,22 @@ bindsym $mod+Shift+f floating toggle
 # hold $mod to drag a floating window
 floating_modifier $mod
 
-# pop-ups should be floating
+# pop-ups and edge cases should be floating
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
 for_window [class="obs"] floating enable
 for_window [class="mpv"] floating enable
 for_window [class="chatterino"] floating enable
 for_window [class="Lutris"] floating enable
+for_window [class="Nextcloud"] floating enable
+
+# don't float obsidian
+for_window [class="obsidian"] floating disable
 
 # Steam Classification taken from https://github.com/z3ntu/dotfiles/blob/fb3f5a25205b45234bdba8da7b19d63cd0d3db25/i3/.config/i3/config#L55
 # Steam friend chat windows just have the name. Thus, added floating for all Steam titles except main window.
-# Testing this for a few weeks. If effective, remove all other comments and just keep the two.
-
 for_window [class="Steam" title=".*"] floating enable
 for_window [class="Steam" title="^Steam$"] floating disable
-#for_window [class="Steam" title=".* - Chat"] floating enable
-#for_window [class="Steam" title="Settings"] floating enable
-#for_window [class="Steam" title=".* - event started"] floating enable
-#for_window [class="Steam" title=".* CD key"] floating enable
-#for_window [class="Steam" title="Steam - Self Updater"] floating enable
-#for_window [class="Steam" title="Screenshot Uploader"] floating enable
-#for_window [class="Steam" title="Steam Guard - Computer Authorization Required"] floating enable
-#for_window [class="Steam" title="Friends*"] floating enable
-#for_window [title="Steam Keyboard"] floating enable
 
 # make sure startup programs are assigned correctly
 for_window [class="firefox"] move container to workspace 1
@@ -168,9 +154,9 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
-# start polybar
-exec_always --no-startup-id ~/.config/polybar/colorblocks/launch.sh
+# start polybar + scripts
+exec_always --no-startup-id ~/.config/polybar/hack/launch.sh
 # exec --no-startup-id python ~/.config/polybar/scripts/scroll_text.py ~/.config/polybar/scripts/song.txt
 # exec --no-startup-id echo " OFFLINE " > ~/.config/polybar/scripts/song.txt
-bindsym $mod+d exec ~/.config/polybar/colorblocks/scripts/launcher.sh
-bindsym Mod1+Tab exec ~/.config/polybar/colorblocks/scripts/window_choose.sh
+bindsym $mod+d exec ~/.config/polybar/hack/scripts/launcher.sh
+bindsym Mod1+Tab exec ~/.config/polybar/hack/scripts/window_choose.sh
