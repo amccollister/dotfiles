@@ -8,7 +8,7 @@
  */
 
 configuration {
-	font:							"Iosevka Nerd Font 10";
+	font:							"Hack Nerd Font 16";
     show-icons:                     true;
 	icon-theme: 					"Papirus";
     display-drun: 					"";
@@ -28,10 +28,10 @@ window {
 	border:							2px;
 	border-color:					@ac;
     border-radius:                  0px;
-	width:							300px;
-    location:                       center;
+	width:							11%;
+    location:                       northeast;
     x-offset:                       0;
-    y-offset:                       0;
+    y-offset:                       2.5%;
 }
 
 prompt {
@@ -39,12 +39,12 @@ prompt {
     padding:                        10px 10px 10px 0px;
 	background-color: 				@al;
 	text-color: 					@ac;
-	font:							"Iosevka Nerd Font 10";
+	font:							"Hack Nerd Font 16";
 }
 
 textbox-prompt-colon {
 	padding: 						10px 15px 10px 15px;
-	font:							"Iosevka Nerd Font 10";
+	font:							"Hack Nerd Font 16";
 	background-color: 				@al;
 	text-color: 					@ac;
 	expand: false;
@@ -78,7 +78,7 @@ listview {
     background-color:               @al;
     padding:                        0px;
     columns:                        1;
-    lines:                          5;
+    lines:                          4;
     spacing:                        5px;
     cycle:                          true;
     dynamic:                        true;
@@ -116,9 +116,16 @@ element-text {
 }
 
 element selected {
-    background-color:               @se;
-    text-color:                     @fg;
+//    background-color:               @se;
+    background-color:               @bg;
+    text-color:                     @ac;
 	border:							0px 0px 0px 0px;
     border-radius:                  0px;
-    border-color:                  	@ac;
+//    border-color:                  	@ac;
+    border-color:                  	@bg;
+}
+	
+element-text, element-icon {
+     background-color: inherit;
+     text-color:       inherit;
 }

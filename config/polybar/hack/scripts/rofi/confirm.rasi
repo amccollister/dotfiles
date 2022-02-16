@@ -5,17 +5,17 @@
 * {
     background-color:       @bg;
     text-color:             @fg;
-	font:				 	"Iosevka Nerd Font 10";
+	font:				 	"Iosevka Nerd Font 16";
 }
 
 window {
-    width:      			225px;
+    width:      			11%;
     padding:    			25px;
     border:					1px;
     border-radius:          0px;
     border-color:           @ac;
-    location:               center;
-    y-offset:               -2em;
+    location:               northeast;
+    y-offset:               2.5%;
 }
 
 entry {
