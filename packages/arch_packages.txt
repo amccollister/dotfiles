@@ -104,6 +104,7 @@ streamlink
 sudo
 texinfo
 tk
+tldr
 tree
 ttf-font-awesome
 ttf-liberation
