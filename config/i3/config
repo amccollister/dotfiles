@@ -36,7 +36,7 @@ exec --no-startup-id picom -b --experimental-backends
 exec --no-startup-id redshift -l manual
 exec_always kitti3 -s 0.5 0.5 &
 exec --no-startup-id nextcloud --background &
-exec --no-startup-id easyeffects --gapplication-service
+exec --no-startup-id "sh -c 'sleep 5; easyeffects --gapplication-service'"
 
 # Take a screenshot | Proud of my self on figuring this one out! :)
 bindsym Print --release exec "import png:- | xclip -selection clipboard -t image/png"
