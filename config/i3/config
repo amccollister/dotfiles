@@ -16,8 +16,10 @@ bindsym $mod+Escape nop kitti3
 
 # setup monitors, workspaces and mouse speed with xrandr (double check the actual mouse section; a kernel update messed up the mouse speed)
 exec --no-startup-id xrandr --output DisplayPort-0 --mode 2560x1440 --rate 144 --output HDMI-A-0 --mode 1920x1080 --rate 60 --right-of DisplayPort-0
-exec --no-startup-id xinput --set-prop "Logitech G502 HERO SE" "libinput Accel Speed" -1
-exec --no-startup-id xinput --set-prop "Glorious Model O" "libinput Accel Speed" -1
+#exec --no-startup-id xinput --set-prop "Logitech G502 HERO SE" "libinput Accel Speed" -1
+#exec --no-startup-id xinput --set-prop "Glorious Model O" "libinput Accel Speed" -1
+exec --no-startup-id xinput --set-prop "SteelSeries SteelSeries Rival 3 Wireless" "libinput Accel Speed" -1
+exec --no-startup-id xinput --set-prop "SteelSeries SteelSeries Rival 3 Wireless" "Coordinate Transformation Matrix" 3 0 0 0 3 0 0 0 1
 workspace 1 output DisplayPort-0
 workspace 2 output DisplayPort-0
 workspace 3 output HDMI-A-0
