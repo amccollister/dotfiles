@@ -37,10 +37,12 @@ msg() {
 #options="$lock\n$suspend\n$logout\n$reboot\n$shutdown"
 options="$lock\n$logout\n$reboot\n$shutdown"
 
+ans="YES"
+
 chosen="$(echo -e "$options" | $rofi_command -p "Uptime: $uptime" -dmenu -selected-row 0)"
 case $chosen in
     $shutdown)
-		ans=$(confirm_exit &)
+		#ans=$(confirm_exit &)
 		if [[ $ans == "yes" || $ans == "YES" || $ans == "y" || $ans == "Y" ]]; then
 			systemctl poweroff
 		elif [[ $ans == "no" || $ans == "NO" || $ans == "n" || $ans == "N" ]]; then
@@ -50,7 +52,7 @@ case $chosen in
         fi
         ;;
     $reboot)
-		ans=$(confirm_exit &)
+		#ans=$(confirm_exit &)
 		if [[ $ans == "yes" || $ans == "YES" || $ans == "y" || $ans == "Y" ]]; then
 			systemctl reboot
 		elif [[ $ans == "no" || $ans == "NO" || $ans == "n" || $ans == "N" ]]; then
@@ -60,14 +62,15 @@ case $chosen in
         fi
         ;;
     $lock)
-		if [[ -f /usr/bin/i3lock ]]; then
-			i3lock
-		elif [[ -f /usr/bin/betterlockscreen ]]; then
-			betterlockscreen -l
-		fi
+		betterlockscreen -l
+		#if [[ -f /usr/bin/i3lock ]]; then
+		#	i3lock
+		#elif [[ -f /usr/bin/betterlockscreen ]]; then
+		#	betterlockscreen -l
+		#fi
         ;;
     $suspend)
-		ans=$(confirm_exit &)
+		#ans=$(confirm_exit &)
 		if [[ $ans == "yes" || $ans == "YES" || $ans == "y" || $ans == "Y" ]]; then
 			mpc -q pause
 			amixer set Master mute
@@ -79,7 +82,7 @@ case $chosen in
         fi
         ;;
     $logout)
-		ans=$(confirm_exit &)
+		#ans=$(confirm_exit &)
 		if [[ $ans == "yes" || $ans == "YES" || $ans == "y" || $ans == "Y" ]]; then
 			if [[ "$DESKTOP_SESSION" == "Openbox" ]]; then
 				openbox --exit
