@@ -19,7 +19,7 @@ exec --no-startup-id xrandr --output DisplayPort-0 --mode 2560x1440 --rate 144 -
 #exec --no-startup-id xinput --set-prop "Logitech G502 HERO SE" "libinput Accel Speed" -1
 #exec --no-startup-id xinput --set-prop "Glorious Model O" "libinput Accel Speed" -1
 exec --no-startup-id xinput --set-prop "SteelSeries SteelSeries Rival 3 Wireless" "libinput Accel Speed" -1
-exec --no-startup-id xinput --set-prop "SteelSeries SteelSeries Rival 3 Wireless" "Coordinate Transformation Matrix" 3 0 0 0 3 0 0 0 1
+exec --no-startup-id xinput --set-prop "SteelSeries SteelSeries Rival 3 Wireless" "Coordinate Transformation Matrix" 3.3 0 0 0 3.3 0 0 0 1
 workspace 1 output DisplayPort-0
 workspace 2 output DisplayPort-0
 workspace 3 output HDMI-A-0
@@ -29,7 +29,7 @@ workspace 4 output HDMI-A-0
 exec_always ~/.config/i3/wall/set_wal.sh ~/downloads/wallpapers/reunion.png
 
 # start programs
-exec --no-startup-id i3-msg 'workspace 1; exec firefox'
+exec --no-startup-id i3-msg 'workspace 1; exec "sleep 3; firefox"'
 exec --no-startup-id i3-msg 'workspace 2; exec steam'
 exec --no-startup-id i3-msg 'workspace 3; exec discord --ignore-gpu-blocklist --disable-features=UseOzonePlatform --enable-features=VaapiVideoDecoder --use-gl=desktop --enable-gpu-rasterization --enable-zero-copy'
 exec --no-startup-id i3-msg 'workspace 4; exec obsidian'
