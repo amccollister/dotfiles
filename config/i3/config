@@ -19,7 +19,10 @@ exec --no-startup-id xrandr --output DisplayPort-0 --mode 2560x1440 --rate 144 -
 #exec --no-startup-id xinput --set-prop "Logitech G502 HERO SE" "libinput Accel Speed" -1
 #exec --no-startup-id xinput --set-prop "Glorious Model O" "libinput Accel Speed" -1
 exec --no-startup-id xinput --set-prop "SteelSeries SteelSeries Rival 3 Wireless" "libinput Accel Speed" -1
-exec --no-startup-id xinput --set-prop "SteelSeries SteelSeries Rival 3 Wireless" "Coordinate Transformation Matrix" 3.3 0 0 0 3.3 0 0 0 1
+
+# Fun fact: This breaks video games. Use the DPI setting.
+#exec --no-startup-id xinput --set-prop "SteelSeries SteelSeries Rival 3 Wireless" "Coordinate Transformation Matrix" 3.3 0 0 0 3.3 0 0 0 1
+
 workspace 1 output DisplayPort-0
 workspace 2 output DisplayPort-0
 workspace 3 output HDMI-A-0
@@ -41,7 +44,7 @@ exec --no-startup-id nextcloud --background &
 exec --no-startup-id "sh -c 'sleep 5; easyeffects --gapplication-service'"
 
 # Take a screenshot | Proud of my self on figuring this one out! :)
-bindsym Print --release exec "import png:- | xclip -selection clipboard -t image/png"
+bindsym $mod+Shift+s --release exec "import png:- | xclip -selection clipboard -t image/png"
 
 # Use loginctl lock-session or $mod+l to lock the system
 exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l --nofork
