@@ -29,7 +29,8 @@ workspace 3 output HDMI-A-0
 workspace 4 output HDMI-A-0
 
 # setup wallpaper
-exec_always ~/.config/i3/wall/set_wal.sh ~/downloads/wallpapers/reunion.png
+#exec_always ~/.config/i3/wall/set_wal.sh ~/downloads/wallpapers/cyberpunk.png
+exec_always ~/.config/i3/wall/set_wal.sh ~/downloads/wallpapers/outer_wilds_outro.png
 
 # start programs
 exec --no-startup-id i3-msg 'workspace 1; exec "sleep 3; firefox"'
@@ -83,6 +84,7 @@ floating_modifier $mod
 # pop-ups and edge cases should be floating
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
+for_window [class="Thunar"] floating enable
 for_window [class="obs"] floating enable
 for_window [class="kitty"] floating enable
 for_window [class="mpv"] floating enable
