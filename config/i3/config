@@ -105,10 +105,11 @@ for_window [class="Steam" title=".*"] floating enable
 for_window [class="Steam" title="^Steam$"] floating disable
 
 # make sure startup programs are assigned correctly
-for_window [class="obsidian"] move container to workspace 4
-for_window [class="discord"] move container to workspace 3
-for_window [class="Steam"] move container to workspace 2
 for_window [class="firefox"] move container to workspace 1
+for_window [class="Steam"] move container to workspace 2
+for_window [class="discord"] move container to workspace 3
+for_window [class="obsidian"] move container to workspace 4
+for_window [class="spotify"] move container to workspace 5
 
 
 # defining workspaces
@@ -148,24 +149,6 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-
-# resize window (you can also use the mouse for that)
-bindsym $mod+r mode "resize"
-mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left/right will adjust the window’s width.
-        # Pressing up/down will adjust the window’s height.
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-
-        # back to normal: Enter or Escape or $mod+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
-}
 
 # start polybar + scripts
 exec_always --no-startup-id ~/.config/polybar/hack/launch.sh
