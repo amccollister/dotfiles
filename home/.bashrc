@@ -23,6 +23,7 @@ if [[ $iatest > 0 ]]; then bind "set show-all-if-ambiguous on"; fi
 # apply the aliases and color :)
 alias abort='sudo pacman -Qtdq | sudo pacman -Rns -'
 alias ls='ls --color=auto'
+alias grep='grep --color'
 alias mv='mv -i'
 PS1="\[\033[01;35m\][\[\033[01;32m\]\u@\h \[\033[01;34m\]\W\[\033[01;35m\]]\[\033[00m\]\$ "
 eval "$(dircolors)"
