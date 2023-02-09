@@ -42,7 +42,7 @@ exec --no-startup-id i3-msg 'workspace 1; exec "sleep 3; firefox"'
 exec --no-startup-id i3-msg 'workspace 2; exec steam'
 exec --no-startup-id i3-msg 'workspace 3; exec "sleep 3; discord --ignore-gpu-blocklist --disable-features=UseOzonePlatform --enable-features=VaapiVideoDecoder --use-gl=desktop --enable-gpu-rasterization --enable-zero-copy"'
 exec --no-startup-id i3-msg 'workspace 4; exec obsidian'
-exec --no-startup-id i3-msg 'workspace 5; exec "sleep 3; spotify"'
+exec --no-startup-id i3-msg 'workspace 5; exec "sleep 3; spotify-launcher"'
 
 exec --no-startup-id picom -b --experimental-backends
 exec --no-startup-id redshift -l manual
