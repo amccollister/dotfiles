@@ -17,13 +17,12 @@ bindsym $mod+Return exec kitty
 bindsym $mod+Escape nop kitti3
 
 # setup monitors, workspaces and mouse speed with xrandr (double check the actual mouse section; a kernel update messed up the mouse speed)
-# New mointor layout who dis
-#exec --no-startup-id xrandr --output DisplayPort-0 --mode 2560x1440 --rate 144 --output HDMI-A-0 --mode 1920x1080 --rate 60 --right-of DisplayPort-0
-exec --no-startup-id xrandr --output DisplayPort-0 --primary --mode 2560x1440 --rate 144 --pos 0x844 --rotate normal --output HDMI-A-0 --mode 2560x1440 --rate 144 --pos 2560x0 --rotate right --output DVI-D-0 --off
+exec --no-startup-id xrandr --output DisplayPort-0 --primary --mode 2560x1440 --rate 144 --pos 0x508 --rotate normal --output HDMI-A-0 --mode 2560x1440 --rate 144 --pos 2560x0 --rotate right --output DVI-D-0 --off
 
 #exec --no-startup-id xinput --set-prop "Logitech G502 HERO SE" "libinput Accel Speed" -1
 #exec --no-startup-id xinput --set-prop "Glorious Model O" "libinput Accel Speed" -1
-exec --no-startup-id xinput --set-prop "SteelSeries SteelSeries Rival 3 Wireless" "libinput Accel Speed" -1
+#exec --no-startup-id xinput --set-prop "SteelSeries SteelSeries Rival 3 Wireless" "libinput Accel Speed" -1
+exec --no-startup-id xinput --set-prop "Logitech USB Receiver" "libinput Accel Speed" -0.5
 
 # Fun fact: This breaks video games. Use the DPI setting.
 #exec --no-startup-id xinput --set-prop "SteelSeries SteelSeries Rival 3 Wireless" "Coordinate Transformation Matrix" 3.3 0 0 0 3.3 0 0 0 1
@@ -49,6 +48,9 @@ exec --no-startup-id redshift -l manual
 exec_always --no-startup-id kitti3 -s 0.5 0.5 &
 exec --no-startup-id nextcloud --background &
 exec --no-startup-id "sh -c 'sleep 5; easyeffects --gapplication-service'"
+
+# Start barrier for work
+exec --no-startup-id "barriers --no-tray --name arch --disable-crypto --disable-client-cert-checking -c /opt/barrier.conf --address :24800"
 
 # Take a screenshot | Proud of my self on figuring this one out! :)
 # bindsym $mod+Shift+s --release exec "import png:- | xclip -selection clipboard -t image/png"
