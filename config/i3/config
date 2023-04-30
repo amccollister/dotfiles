@@ -111,6 +111,7 @@ for_window [class="Steam" title="^Steam$"] floating disable
 # make sure startup programs are assigned correctly
 for_window [class="firefox"] move container to workspace 1
 for_window [class="Steam"] move container to workspace 2
+for_window [class="steamwebhelper"] move container to workspace 2
 for_window [class="discord"] move container to workspace 3
 for_window [class="obsidian"] move container to workspace 4
 for_window [class="Spotify"] move container to workspace 5

@@ -7,4 +7,3 @@
 
 wal -i $1
 sh ~/.config/polybar/hack/scripts/pywal.sh $1
-wal_steam;
