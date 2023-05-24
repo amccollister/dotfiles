@@ -17,9 +17,7 @@ bindsym $mod+Return exec kitty
 bindsym $mod+Escape nop kitti3
 
 # setup monitors, workspaces and mouse speed with xrandr (double check the actual mouse section; a kernel update messed up the mouse speed)
-# exec --no-startup-id xrandr --output DisplayPort-0 --primary --mode 2560x1440 --rate 144 --pos 0x508 --rotate normal --output HDMI-A-0 --mode 2560x1440 --rate 144 --pos 2560x0 --rotate right --output DVI-D-0 --off
-#exec --no-startup-id xrandr --output DisplayPort-0 --primary --mode 2560x1440 --rate 144 --pos 0x560 --rotate normal --output HDMI-A-0 --mode 2560x1440 --rate 144 --pos 2560x0 --rotate right --output DVI-D-0 --off
-exec --no-startup-id xrandr --output HDMI-0 --mode 2560x1440 --rate 60 --pos 2560x0 --rotate right --output DP-0 --mode 2560x1440 --rate 144 --pos 0x560 --rotate normal --output DP-1 --off --output DP-2 --off --output DP-3 --off --output DP-4 --off --output DP-5 --off
+exec --no-startup-id xrandr --output HDMI-0 --mode 2560x1440 --rate 60 --pos 2560x0 --rotate right --output DP-0 --mode 2560x1440 --primary --rate 144 --pos 0x560 --rotate normal --output DP-1 --off --output DP-2 --off --output DP-3 --off --output DP-4 --off --output DP-5 --off
 
 #exec --no-startup-id xinput --set-prop "Logitech G502 HERO SE" "libinput Accel Speed" -1
 #exec --no-startup-id xinput --set-prop "Glorious Model O" "libinput Accel Speed" -1
@@ -30,10 +28,11 @@ exec --no-startup-id xinput --set-prop "Logitech USB Receiver" "libinput Accel S
 # Fun fact: This breaks video games. Use the DPI setting.
 #exec --no-startup-id xinput --set-prop "SteelSeries SteelSeries Rival 3 Wireless" "Coordinate Transformation Matrix" 3.3 0 0 0 3.3 0 0 0 1
 
-workspace 1 output DisplayPort-0
-workspace 2 output DisplayPort-0
-workspace 3 output HDMI-A-0
-workspace 4 output HDMI-A-0
+workspace 1 output DP-0
+workspace 2 output DP-0
+workspace 3 output HDMI-0
+workspace 4 output HDMI-0
+workspace 5 output HDMI-0
 
 # setup wallpaper
 #exec_always ~/.config/i3/wall/set_wal.sh ~/downloads/wallpapers/cyberpunk.png
