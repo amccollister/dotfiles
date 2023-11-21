@@ -24,6 +24,7 @@ exec --no-startup-id xrandr --output DP-2 --mode 2560x1440 --rate 144 --pos 2560
 #exec --no-startup-id xinput --set-prop "SteelSeries SteelSeries Rival 3 Wireless" "libinput Accel Speed" -1
 # See /etc/X11/xorg.conf.d/50-mouse-acceleration.conf
 exec --no-startup-id xinput --set-prop "Logitech USB Receiver" "libinput Accel Speed" -1
+exec --no-startup-id xinput --set-prop "pointer:Logitech G Pro " "libinput Accel Speed" -1
 
 # Fun fact: This breaks video games. Use the DPI setting.
 #exec --no-startup-id xinput --set-prop "SteelSeries SteelSeries Rival 3 Wireless" "Coordinate Transformation Matrix" 3.3 0 0 0 3.3 0 0 0 1
