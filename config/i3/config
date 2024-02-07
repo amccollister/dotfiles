@@ -32,26 +32,26 @@ exec --no-startup-id xinput --set-prop "pointer:Logitech G Pro " "libinput Accel
 
 workspace 1 output DP-0
 workspace 2 output DP-0
-workspace 3 output DP-2
-workspace 4 output DP-2
-workspace 5 output DP-2
+workspace 3 output DP-4
+workspace 4 output DP-4
+workspace 5 output DP-4
 
 # setup wallpaper
 #exec_always ~/.config/i3/wall/set_wal.sh ~/downloads/wallpapers/cyberpunk.png
 exec_always ~/.config/i3/wall/set_wal.sh ~/downloads/wallpapers/outer_wilds_outro.png
 
 # start programs
-exec --no-startup-id i3-msg 'workspace 1; exec "sleep 3; firefox"'
+exec --no-startup-id i3-msg 'workspace 1; exec "sleep 1; firefox"'
 exec --no-startup-id i3-msg 'workspace 2; exec steam'
-exec --no-startup-id i3-msg 'workspace 3; exec "sleep 3; discord --ignore-gpu-blocklist --disable-features=UseOzonePlatform --enable-features=VaapiVideoDecoder --use-gl=desktop --enable-gpu-rasterization --enable-zero-copy"'
-exec --no-startup-id i3-msg 'workspace 3; exec "sleep 3; spotify-launcher"'
+exec --no-startup-id i3-msg 'workspace 3; exec "sleep 1; discord --ignore-gpu-blocklist --disable-features=UseOzonePlatform --enable-features=VaapiVideoDecoder --use-gl=desktop --enable-gpu-rasterization --enable-zero-copy"'
+exec --no-startup-id i3-msg 'workspace 3; exec "sleep 7; spotify-launcher"'
 exec --no-startup-id i3-msg 'workspace 4; exec obsidian'
 
 # Picom makes games run like garbage with minimal benefit
 # exec --no-startup-id picom -b
 exec --no-startup-id redshift -l manual
 exec_always --no-startup-id kitti3 -s 0.5 0.5 &
-exec --no-startup-id nextcloud --background &
+# exec --no-startup-id nextcloud --background &
 exec --no-startup-id "sh -c 'sleep 5; easyeffects --gapplication-service'"
 
 # Start barrier for work
@@ -112,6 +112,8 @@ for_window [class="obsidian"] floating disable
 # Steam friend chat windows just have the name. Thus, added floating for all Steam titles except main window.
 for_window [class="Steam" title=".*"] floating enable
 for_window [class="Steam" title="^Steam$"] floating disable
+for_window [class="steam" title=".*"] floating enable
+for_window [class="steam" title="^Steam$"] floating disable
 
 # make sure startup programs are assigned correctly
 for_window [class="firefox"] move container to workspace 1
