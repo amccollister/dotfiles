@@ -6,8 +6,8 @@
 [[ $- != *i* ]] && return
 
 # Improve the bash history
-export HISTFILESIZE=10000
-export HISTSIZE=500
+export HISTFILESIZE=100000
+export HISTSIZE=1000
 export HISTCONTROL=erasedups:ignoredups:ignorespace
 
 # Check window size and append history
