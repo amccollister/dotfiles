@@ -49,13 +49,14 @@ exec --no-startup-id redshift -l manual
 exec --no-startup-id "sh -c 'sleep 5; easyeffects --gapplication-service'"
 # exec --no-startup-id nextcloud --background &
 # exec --no-startup-id picom -b
-bindsym $mod+Shift+s --release exec "flameshot gui -c" 
+# bindsym $mod+Shift+s --release exec "flameshot gui -c"
+bindsym $mod+Shift+s --release exec "import png:- | xclip -selection clipboard -t image/png"
 
 # Start barrier for work
 exec --no-startup-id "barriers --no-tray --name arch --disable-crypto --disable-client-cert-checking -c /opt/barrier.conf --address :24800"
 
 # Use loginctl lock-session or $mod+l to lock the system
-# TODO: Consider removnig this
+# TODO: Consider removig this
 exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l --nofork
 bindsym $mod+l exec betterlockscreen -l
 
