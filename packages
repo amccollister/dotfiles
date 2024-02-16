@@ -22,7 +22,6 @@ ddrescue
 deluge-gtk
 discord_arch_electron
 dmidecode
-dnsmasq
 easyeffects
 edk2-shell
 efitools
@@ -38,7 +37,6 @@ fsarchiver
 fzf
 glances
 gnu-netcat
-go
 godot
 gpart
 grub
@@ -49,7 +47,6 @@ hwdetect
 inetutils
 informant
 intel-ucode
-iwd
 jfsutils
 kexec-tools
 kitti3
@@ -58,6 +55,7 @@ lib32-libva-mesa-driver
 lib32-mesa-vdpau
 linux-docs
 linux-headers
+linux-lts
 llvm15
 lshw
 lutris
@@ -122,3 +120,4 @@ xl2tpd
 xorg-xinit
 xorg-xinput
 yay
+zram-generator
