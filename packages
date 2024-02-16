@@ -78,6 +78,7 @@ openconnect
 openvpn
 pacman-contrib
 perl-rename
+pkgstats
 polybar
 pptpclient
 pulsemixer
