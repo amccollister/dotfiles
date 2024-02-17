@@ -18,6 +18,7 @@ reboot=" Restart"
 lock=" Lock"
 suspend=" Sleep"
 logout=" Logout"
+windows="  Windows"
 
 # Confirmation
 confirm_exit() {
@@ -35,7 +36,8 @@ msg() {
 
 # Variable passed to rofi
 #options="$lock\n$suspend\n$logout\n$reboot\n$shutdown"
-options="$lock\n$logout\n$reboot\n$shutdown"
+#options="$lock\n$logout\n$reboot\n$shutdown"
+options="$logout\n$reboot\n$shutdown\n$windows"
 
 ans="YES"
 
@@ -69,6 +71,9 @@ case $chosen in
 		#	betterlockscreen -l
 		#fi
         ;;
+	$windows)
+		systemctl reboot --boot-loader-entry=windows.conf
+		;;
     $suspend)
 		#ans=$(confirm_exit &)
 		if [[ $ans == "yes" || $ans == "YES" || $ans == "y" || $ans == "Y" ]]; then

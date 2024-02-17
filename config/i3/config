@@ -40,7 +40,7 @@ exec_always ~/.config/i3/wall/set_wal.sh ~/downloads/wallpapers/outer_wilds_outr
 exec --no-startup-id i3-msg 'workspace 1; exec "sleep 1; firefox"'
 exec --no-startup-id i3-msg 'workspace 2; exec steam'
 exec --no-startup-id i3-msg 'workspace 3; exec "sleep 1; discord --ignore-gpu-blocklist --disable-features=UseOzonePlatform --enable-features=VaapiVideoDecoder --use-gl=desktop --enable-gpu-rasterization --enable-zero-copy"'
-exec --no-startup-id i3-msg 'workspace 3; exec "sleep 7; spotify-launcher"'
+exec --no-startup-id i3-msg 'workspace 3; exec "sleep 3; spotify-launcher"'
 exec --no-startup-id i3-msg 'workspace 4; exec obsidian'
 
 # Startup background applications
