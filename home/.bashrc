@@ -11,6 +11,7 @@ export HISTSIZE=1000
 export HISTCONTROL=erasedups:ignoredups:ignorespace
 
 # Check window size and append history
+shopt -s autocd
 shopt -s checkwinsize
 shopt -s histappend
 PROMPT_COMMAND='history -a'
@@ -19,6 +20,8 @@ PROMPT_COMMAND='history -a'
 if [[ $iatest > 0 ]]; then bind "set completion-ignore-case on"; fi
 if [[ $iatest > 0 ]]; then bind "set show-all-if-ambiguous on"; fi
 
+# Protect files from >
+set -o noclobber
 
 # apply the aliases and color :)
 alias abort='sudo pacman -Qtdq | sudo pacman -Rns -'
@@ -39,6 +42,7 @@ yeet(){ pacman -Qqe | fzf --multi --preview 'pacman -Qi {1}' | xargs -ro sudo pa
 # Use bash-completion, if available
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
     . /usr/share/bash-completion/bash_completion
+source /usr/share/doc/pkgfile/command-not-found.bash
 
 # Source the ranger_cd script
 . /usr/share/doc/ranger/examples/shell_automatic_cd.sh
