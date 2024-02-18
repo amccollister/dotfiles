@@ -37,7 +37,7 @@ msg() {
 # Variable passed to rofi
 #options="$lock\n$suspend\n$logout\n$reboot\n$shutdown"
 #options="$lock\n$logout\n$reboot\n$shutdown"
-options="$logout\n$reboot\n$shutdown\n$windows"
+options="$windows\n$logout\n$reboot\n$shutdown"
 
 ans="YES"
 
