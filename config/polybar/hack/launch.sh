@@ -12,5 +12,5 @@ sleep 1
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch the bar
-polybar -r -q top -c "$DIR"/config.ini &
+# polybar -r -q top -c "$DIR"/config.ini &
 polybar -r -q bottom -c "$DIR"/config.ini &
