@@ -13,15 +13,10 @@ smart_gaps on
 
 # start a terminal
 bindsym $mod+Return exec kitty
-# bindsym $mod+Escape nop kitti3
 bindsym $mod+Escape exec tdrop -Amat -x 50% -y 0 -w 50% -h 50% kitty
 
-# setup monitors, workspaces and mouse speed with xrandr
+# setup monitors, workspaces and mouse speed
 exec --no-startup-id xrandr --output DP-0 --primary --mode 2560x1440 --rate 144 --pos 0x0 --rotate normal --output DP-4 --rate 144 --mode 2560x1440 --pos 2560x0 --rotate normal
-
-# See /etc/X11/xorg.conf.d/50-mouse-acceleration.conf
-#exec --no-startup-id xinput --set-prop "Logitech USB Receiver" "libinput Accel Speed" -1
-#exec --no-startup-id xinput --set-prop "pointer:Logitech G Pro " "libinput Accel Speed" -1
 exec --no-startup-id for i in {1..100}; do /usr/bin/xinput --set-prop $i "libinput Accel Speed" -1 2> /dev/null; done 
 
 workspace 1 output DP-0
@@ -37,17 +32,14 @@ exec_always ~/.config/i3/wall/set_wal.sh ~/.config/i3/wall/celeste.png
 exec --no-startup-id i3-msg 'workspace 1; exec "sleep 1; firefox"'
 exec --no-startup-id i3-msg 'workspace 2; exec steam'
 exec --no-startup-id i3-msg 'workspace 3; exec "sleep 1; discord --ignore-gpu-blocklist --disable-features=UseOzonePlatform --enable-features=VaapiVideoDecoder --use-gl=desktop --enable-gpu-rasterization --enable-zero-copy"'
-exec --no-startup-id i3-msg 'workspace 3; exec "sleep 3; spotify-launcher"'
+exec --no-startup-id i3-msg 'workspace 3; exec "sleep 5; spotify-launcher"'
 exec --no-startup-id i3-msg 'workspace 4; exec obsidian'
 
 # Startup background applications
-exec_always --no-startup-id kitti3 -s 0.5 0.5 &
 exec --no-startup-id redshift -l manual
 exec --no-startup-id "sh -c 'sleep 5; easyeffects --gapplication-service'"
-# exec --no-startup-id nextcloud --background &
-# exec --no-startup-id picom -b
-#bindsym $mod+Shift+s --release exec "flameshot gui -c"
-bindsym $mod+Shift+s --release exec "import png:- | xclip -selection clipboard -t image/png"
+exec --no-startup-id flameshot
+bindsym $mod+Shift+s --release exec "flameshot gui -c"
 
 # Start barrier for work
 exec --no-startup-id "barriers --no-tray --name arch --disable-crypto --disable-client-cert-checking -c /opt/barrier.conf --address :24800"
