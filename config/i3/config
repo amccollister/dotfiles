@@ -37,7 +37,7 @@ exec --no-startup-id i3-msg 'workspace 4; exec obsidian'
 
 # Startup background applications
 exec --no-startup-id redshift -l manual
-exec --no-startup-id "sh -c 'sleep 5; easyeffects --gapplication-service'"
+# exec --no-startup-id "sh -c 'sleep 5; easyeffects --gapplication-service'"
 exec --no-startup-id flameshot
 bindsym $mod+Shift+s --release exec "flameshot gui -c"
 
