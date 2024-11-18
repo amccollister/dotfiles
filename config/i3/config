@@ -16,8 +16,11 @@ bindsym $mod+Return exec kitty
 bindsym $mod+Escape exec tdrop -Amat -x 50% -y 0 -w 50% -h 50% kitty
 
 # setup monitors, workspaces and mouse speed
-exec --no-startup-id xrandr --output DP-0 --primary --mode 2560x1440 --rate 144 --pos 0x0 --rotate normal --output DP-4 --rate 144 --mode 2560x1440 --pos 2560x0 --rotate normal
-exec --no-startup-id for i in {1..100}; do /usr/bin/xinput --set-prop $i "libinput Accel Speed" -1 2> /dev/null; done 
+# exec --no-startup-id xrandr --output DP-0 --primary --mode 2560x1440 --rate 144 --pos 0x0 --rotate normal --output DP-4 --rate 144 --mode 2560x1440 --pos 2560x0 --rotate normal
+
+# Single monitor for now
+exec --no-startup-id xrandr --output DP-4 --primary --mode 2560x1440 --rate 180 --pos 0x0 --rotate normal
+exec --no-startup-id for i in {1..100}; do /usr/bin/xinput --set-prop $i "libinput Accel Speed" -1 2> /dev/null; done
 
 workspace 1 output DP-0
 workspace 2 output DP-0
