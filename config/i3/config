@@ -44,8 +44,8 @@ exec --no-startup-id redshift -l manual
 exec --no-startup-id flameshot
 bindsym $mod+Shift+s --release exec "flameshot gui -c"
 
-# Start barrier for work
-exec --no-startup-id "barriers --no-tray --name arch --disable-crypto --disable-client-cert-checking -c /opt/barrier.conf --address :24800"
+# Start barrier for work -- No longer needed :^)
+# exec --no-startup-id "barriers --no-tray --name arch --disable-crypto --disable-client-cert-checking -c /opt/barrier.conf --address :24800"
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -79,7 +79,7 @@ floating_modifier $mod
 # pop-ups and edge cases should be floating
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
-for_window [class="Thunar"] floating enable
+for_window [class="dolphin"] floating enable
 for_window [class="obs"] floating enable
 for_window [class="kitty"] floating enable
 for_window [class="mpv"] floating enable
