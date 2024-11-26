@@ -11,40 +11,40 @@ gaps inner 20
 gaps outer -20
 smart_gaps on
 
-# start a terminal
+# terminal and tdrop hotkeys
 bindsym $mod+Return exec kitty
 bindsym $mod+Escape exec tdrop -Amat -x 50% -y 0 -w 50% -h 50% kitty
 
 # setup monitors, workspaces and mouse speed
 # exec --no-startup-id xrandr --output DP-0 --primary --mode 2560x1440 --rate 144 --pos 0x0 --rotate normal --output DP-4 --rate 144 --mode 2560x1440 --pos 2560x0 --rotate normal
-
-# Single monitor for now
-exec --no-startup-id xrandr --output DP-4 --primary --mode 2560x1440 --rate 180 --pos 0x0 --rotate normal
+# single monitor for now
+exec --no-startup-id xrandr --output DP-0 --primary --mode 2560x1440 --rate 180 --pos 0x0 --rotate normal
 exec --no-startup-id for i in {1..100}; do /usr/bin/xinput --set-prop $i "libinput Accel Speed" -1 2> /dev/null; done
 
+# assign workspaces to certain monitors
 workspace 1 output DP-0
 workspace 2 output DP-0
 workspace 3 output DP-4
 workspace 4 output DP-4
 workspace 5 output DP-4
 
-# setup wallpaper
+# setup wallpaper and color scheme
 exec_always ~/.config/i3/wall/set_wal.sh ~/.config/i3/wall/firewatch_dark.jpg
 
-# start programs
+# start programs in specific workspaces
 exec --no-startup-id i3-msg 'workspace 1; exec "sleep 1; firefox"'
 exec --no-startup-id i3-msg 'workspace 2; exec STEAM_FORCE_DESKTOPUI_SCALING=1.25 steam'
 exec --no-startup-id i3-msg 'workspace 3; exec "sleep 1; discord --ignore-gpu-blocklist --disable-features=UseOzonePlatform --enable-features=VaapiVideoDecoder --use-gl=desktop --enable-gpu-rasterization --enable-zero-copy"'
 exec --no-startup-id i3-msg 'workspace 3; exec "sleep 5; spotify"'
 exec --no-startup-id i3-msg 'workspace 4; exec obsidian'
 
-# Startup background applications
+# start background applications
 exec --no-startup-id redshift -l manual
 # exec --no-startup-id "sh -c 'sleep 5; easyeffects --gapplication-service'"
 exec --no-startup-id flameshot
-bindsym $mod+Shift+s --release exec "flameshot gui -c"
+	bindsym $mod+Shift+s --release exec "flameshot gui -c"
 
-# Start barrier for work -- No longer needed :^)
+# start barrier for work -- not currently needed
 # exec --no-startup-id "barriers --no-tray --name arch --disable-crypto --disable-client-cert-checking -c /opt/barrier.conf --address :24800"
 
 # kill focused window
@@ -79,11 +79,9 @@ floating_modifier $mod
 # pop-ups and edge cases should be floating
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
-for_window [class="dolphin"] floating enable
-for_window [class="obs"] floating enable
+for_window [class="thunar"] floating enable
 for_window [class="kitty"] floating enable
 for_window [class="mpv"] floating enable
-for_window [class="chatterino"] floating enable
 for_window [class="Lutris"] floating enable
 for_window [class="Nextcloud"] floating enable
 
@@ -98,17 +96,14 @@ for_window [class="steam" title=".*"] floating enable
 for_window [class="steam" title="^Steam$"] floating disable
 
 # make sure startup programs are assigned correctly
-for_window [class="firefox"] move container to workspace 1
-
-# New Steam
-for_window [class="steam"] move container to workspace 2
-for_window [class="Steam"] move container to workspace 2
-for_window [class="steamwebhelper"] move container to workspace 2
-
-for_window [class="discord"] move container to workspace 3
-for_window [class="Spotify"] move container to workspace 3
-for_window [class="obsidian"] move container to workspace 4
-
+# disabling for now to see if these are necessary
+#for_window [class="firefox"] move container to workspace 1
+#for_window [class="steam"] move container to workspace 2
+#for_window [class="Steam"] move container to workspace 2
+#for_window [class="steamwebhelper"] move container to workspace 2
+#for_window [class="discord"] move container to workspace 3
+#for_window [class="Spotify"] move container to workspace 3
+#for_window [class="obsidian"] move container to workspace 4
 
 # defining workspaces
 set $ws1 1
@@ -148,7 +143,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
-# start polybar + scripts
+# start polybar + bind program launcher and window picker
 exec_always --no-startup-id ~/.config/polybar/hack/launch.sh
 bindsym $mod+d exec ~/.config/polybar/hack/scripts/launcher.sh
 bindsym Mod1+Tab exec ~/.config/polybar/hack/scripts/window_choose.sh
