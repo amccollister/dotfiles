@@ -56,6 +56,8 @@ source ~/.cache/wal/colors-tty.sh
 export FZF_CTRL_T_COMMAND='fd . --type f -H'
 export FZF_ALT_C_COMMAND='fd . --type d -H'
 
+# Source zoxide
+eval "$(zoxide init bash)"
 
 # BEGIN_KITTY_SHELL_INTEGRATION
 if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
