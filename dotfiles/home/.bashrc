@@ -44,9 +44,6 @@ yeet(){ pacman -Qqt | fzf --multi --preview 'pacman -Qi {1}' | xargs -ro sudo pa
     . /usr/share/bash-completion/bash_completion
 source /usr/share/doc/pkgfile/command-not-found.bash
 
-# Source the ranger_cd script
-. /usr/share/doc/ranger/examples/shell_automatic_cd.sh
-
 # Source the wal theme for terminals and TTYs
 (cat ~/.cache/wal/sequences &)
 source ~/.cache/wal/colors-tty.sh
