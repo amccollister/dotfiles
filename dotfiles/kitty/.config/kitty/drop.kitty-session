@@ -1,0 +1,4 @@
+# Create horizontal windows
+layout horizontal
+launch bash
+launch bash
