@@ -17,7 +17,7 @@ bindsym $mod+Escape exec tdrop -Amt -x 50% -y 0 -w 50% -h 50% kitty
 
 # setup monitors, workspaces and mouse speed
 exec --no-startup-id xrandr --output DP-2 --primary --mode 2560x1440 --rate 180 --pos 0x0 --rotate normal --output DP-0 --rate 180 --mode 2560x1440 --pos 2560x0 --rotate normal
-exec --no-startup-id ~/projects/dotfiles/config/i3/layout_triple_monitor.sh
+exec --no-startup-id ~/.config/i3/layout_triple_monitor.sh
 exec --no-startup-id for i in {1..100}; do /usr/bin/xinput --set-prop $i "libinput Accel Speed" -1 2> /dev/null; done
 
 # assign workspaces to certain monitors
