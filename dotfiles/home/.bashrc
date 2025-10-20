@@ -28,7 +28,7 @@ alias abort='sudo pacman -Qtdq | sudo pacman -Rns -'
 alias ls='ls --color=auto'
 alias grep='grep --color'
 alias mv='mv -i'
-PS1="\[\033[01;35m\][\[\033[01;32m\]\u@\h \[\033[01;34m\]\W\[\033[01;35m\]]\[\033[00m\]\$ "
+PS1="\[\033[00;35m\][\[\033[00;32m\]\u@\h \[\033[00;34m\]\W\[\033[00;35m\]]\[\033[00m\]\$ "
 eval "$(dircolors)"
 
 # make discord suck less
