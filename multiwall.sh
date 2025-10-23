@@ -12,10 +12,10 @@ mapfile -t monitors < <(hyprctl monitors | grep -E '(Monitor |at )' | paste - - 
 
 # Split the image for each monitor
 crop_perc=$((100/${#monitors[@]}))
-magick $1 -crop $crop_perc%x100% ~/.cache/wallpaper/wall.png
+magick "$1" -crop $crop_perc%x100% ~/.cache/wallpaper/wall.png
 
 # Assign the images per monitor
 for i in "${!monitors[@]}"; do
-  swww img -o ${monitors[$i]} ~/.cache/wallpaper/wall-$i.png
+  swww img -o "${monitors[$i]}" ~/.cache/wallpaper/wall-"$i".png --transition-type left --transition-fps 60; sleep 1.6;
 done
 
