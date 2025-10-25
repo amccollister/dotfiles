@@ -164,11 +164,11 @@
     "custom/power": {
         "format" : " ⏻",
 		"tooltip": false,
-		"on-click": "$HOME/.config/waybar/scripts/powermenu.sh",
+		"on-click": "~/.config/waybar/scripts/powermenu.sh",
     },
 	"custom/updates": {
         "format" : "  {}",
-		"exec": "$HOME/.config/waybar/scripts/updates.sh",
+		"exec": "~/.config/waybar/scripts/updates.sh",
 		"tooltip": false,
 		"on-click": "kitty yay --noconfirm",
     }

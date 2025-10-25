@@ -5,9 +5,7 @@
 ## Github  : @adi1090x
 ## Twitter : @adi1090x
 
-dir="~/.config/polybar/hack/scripts/rofi"
-#uptime=$(uptime -p | sed -e 's/up //g')
-#uptime=$(uptime -p | awk '{print $2"h " $4"m"}')
+dir="~/.config/rofi/themes"
 uptime=$(uptime -p | awk '{print $2 substr($3,1,1) " " $4substr($5,1,1)}')
 
 rofi_command="rofi -theme $dir/powermenu.rasi"
