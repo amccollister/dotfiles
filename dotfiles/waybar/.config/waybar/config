@@ -1,8 +1,8 @@
 {
     "position": "bottom",
     "spacing": 4,
-	"output": ["DP-1"],
-	"reload_style_on_change": true,
+    "output": ["DP-1"],
+    "reload_style_on_change": true,
 
     // Choose the order of the modules
     "modules-left": [
@@ -15,14 +15,15 @@
     ],
     "modules-right": [
         "idle_inhibitor",
-		"network#net_up",
-		"network#net_down",
+        "network#net_up",
+        "network#net_down",
         "cpu",
         "memory",
         "temperature",
         "wireplumber",
         "tray",
         "clock",
+        "custom/notification",
     ],
 
     // Modules configuration
@@ -30,10 +31,20 @@
         "all-outputs": true,
         "format": "{icon}",
         "format-icons": {
+            "active":  "",
             "default": "",
-            "active": "",
-            "urgent": "",
+            "empty":   "",
+            "urgent":  "",
+        },
+        "persistent-workspaces": {
+            "*": [ 1,2,3,4,5,6 ]
         }
+    },
+    "custom/notification": {
+        "tooltip": false,
+        "format": "",
+        "on-click": "swaync-client -t -sw",
+        "escape": true
     },
     "mpd": {
         "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",

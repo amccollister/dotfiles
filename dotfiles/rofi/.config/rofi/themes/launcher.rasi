@@ -20,6 +20,7 @@ configuration {
 }
 
 @import "~/.config/rofi/themes/colors.rasi"
+/*@import "~/.cache/wal/colors-rofi-dark.rasi"*/
 
 window {
     transparency:                   "real";
