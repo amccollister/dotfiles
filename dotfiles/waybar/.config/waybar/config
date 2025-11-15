@@ -5,26 +5,10 @@
     "reload_style_on_change": true,
 
     // Choose the order of the modules
-    "modules-left": [
-        "custom/power",
-        "custom/updates",
-        "hyprland/workspaces"
-    ],
-    "modules-center": [
-        "custom/media"
-    ],
-    "modules-right": [
-        "idle_inhibitor",
-        "network#net_up",
-        "network#net_down",
-        "cpu",
-        "memory",
-        "temperature",
-        "wireplumber",
-        "tray",
-        "clock",
-        "custom/notification"
-    ],
+    "modules-left": ["custom/power","custom/updates","hyprland/workspaces"],
+    "modules-center": ["custom/media"],
+    "modules-right": ["group/expand","wireplumber","tray","clock","custom/notification"],
+    //"modules-right": ["idle_inhibitor","network#net_up","network#net_down","cpu","memory","temperature","wireplumber","tray","clock","custom/notification"],
 
     // Modules configuration
     "hyprland/workspaces": {
@@ -80,8 +64,8 @@
         }
     },
     "tray": {
-        "icon-size": 24,
-        "spacing": 8
+        "icon-size": 22,
+        "spacing": 6
         // "icons": {
         //   "blueman": "bluetooth",
         //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
@@ -145,11 +129,13 @@
     },
     "network#net_up": {
 		"interval": 3,
-		"format": "{bandwidthUpBytes}"
+		"format": "{bandwidthUpBytes}",
+        "tooltip": false
     },
     "network#net_down": {
 		"interval": 3,
-		"format": "{bandwidthDownBytes}"
+		"format": "{bandwidthDownBytes}",
+        "tooltip": false
     },
     "wireplumber": {
         "scroll-step": 5.0, // %, can be a float
@@ -158,8 +144,26 @@
 		"on-click": "wpctl set-mute @DEFAULT_SINK@ toggle",
         "on-click-right": "pwvucontrol"
     },
+    "custom/expand": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/endpoint":{
+        "format": "|",
+        "tooltip": false
+    },
+    "group/expand": {
+        "orientation": "horizontal",
+        "modules": ["custom/expand", "network#net_up","network#net_down","cpu","memory","temperature", "idle_inhibitor", "custom/endpoint"],
+        "drawer": {
+            "transition-duration": 750,
+            "transition-to-left": true,
+            "click-to-reveal": false
+        }
+    },
     "custom/media": {
 		"interval": 1,
+        "tooltip": false,
         "format": "{icon} {text}",
         "max-length": 64,
         "format-icons": {
@@ -173,14 +177,16 @@
         "on-click-right": "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
     },
     "custom/power": {
-        "format" : " ⏻",
+        "format" : "⏻",
 		"tooltip": false,
 		"on-click": "~/.config/waybar/scripts/powermenu.sh"
+        // TODO: Convert this shit to use a vastly simpler drawer!
+        // https://github.com/Alexays/Waybar/wiki/Module:-Group
     },
 	"custom/updates": {
         "format" : "  {}",
 		"exec": "~/.config/waybar/scripts/updates.sh",
 		"tooltip": false,
-		"on-click": "kitty yay --noconfirm"
+		"on-click": "kitty yay"
     }
 }
