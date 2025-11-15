@@ -8,10 +8,10 @@
     "modules-left": [
         "custom/power",
         "custom/updates",
-        "hyprland/workspaces",
+        "hyprland/workspaces"
     ],
     "modules-center": [
-        "custom/media",
+        "custom/media"
     ],
     "modules-right": [
         "idle_inhibitor",
@@ -23,7 +23,7 @@
         "wireplumber",
         "tray",
         "clock",
-        "custom/notification",
+        "custom/notification"
     ],
 
     // Modules configuration
@@ -34,7 +34,7 @@
             "active":  "",
             "default": "",
             "empty":   "",
-            "urgent":  "",
+            "urgent":  ""
         },
         "persistent-workspaces": {
             "*": [ 1,2,3,4,5,6 ]
@@ -81,7 +81,7 @@
     },
     "tray": {
         "icon-size": 24,
-        "spacing": 8,
+        "spacing": 8
         // "icons": {
         //   "blueman": "bluetooth",
         //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
@@ -107,7 +107,7 @@
         "critical-threshold": 75,
         "format": "{temperatureC}°C {icon}",
         "format-icons": ["", "", ""],
-        "format-critical": "{temperatureC}°C {icon}",
+        "format-critical": "{temperatureC}°C {icon}"
     },
     "backlight": {
         // "device": "acpi_video1",
@@ -145,18 +145,18 @@
     },
     "network#net_up": {
 		"interval": 3,
-		"format": "{bandwidthUpBytes}",
+		"format": "{bandwidthUpBytes}"
     },
     "network#net_down": {
 		"interval": 3,
-		"format": "{bandwidthDownBytes}",
+		"format": "{bandwidthDownBytes}"
     },
     "wireplumber": {
         "scroll-step": 5.0, // %, can be a float
         "format": "{volume}% ",
         //"format-muted": "<no speaker symbol>",
 		"on-click": "wpctl set-mute @DEFAULT_SINK@ toggle",
-        "on-click-right": "pwvucontrol",
+        "on-click-right": "pwvucontrol"
     },
     "custom/media": {
 		"interval": 1,
@@ -170,17 +170,17 @@
         "exec": "python $HOME/.config/waybar/scripts/spotify_status.py",
 		"on-click": "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause",
         "on-click-middle": "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous",
-        "on-click-right": "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next",
+        "on-click-right": "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
     },
     "custom/power": {
         "format" : " ⏻",
 		"tooltip": false,
-		"on-click": "~/.config/waybar/scripts/powermenu.sh",
+		"on-click": "~/.config/waybar/scripts/powermenu.sh"
     },
 	"custom/updates": {
         "format" : "  {}",
 		"exec": "~/.config/waybar/scripts/updates.sh",
 		"tooltip": false,
-		"on-click": "kitty yay --noconfirm",
+		"on-click": "kitty yay --noconfirm"
     }
 }
