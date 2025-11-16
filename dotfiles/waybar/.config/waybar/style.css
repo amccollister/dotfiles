@@ -64,12 +64,13 @@ tooltip {
     color: @foreground;
 }
 #custom-power{
-    font-size: 15px;
-    padding-left: 5px;
+    font-size: 18px;
+    padding-left: 8px;
     transition: all .3s ease;
     color: @foreground;
 }
 #custom-updates{
+    padding-left: 10px;
     transition: all .3s ease;
     color: @foreground;
 }

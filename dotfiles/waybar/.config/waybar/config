@@ -63,17 +63,19 @@
         }
     },
     "tray": {
-        "icon-size": 22,
-        "spacing": 6
+        "icon-size": 24,
+        "spacing": 8
         // "icons": {
         //   "blueman": "bluetooth",
         //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
         // }
     },
     "clock": {
-        // "timezone": "America/New_York",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format": "{:%H:%M}",
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "format-alt": "{:%Y-%m-%d}",
+        //"calendar": {"format": {"today": "<span foreground='#F4D03F'><b><u>{}</u></b></span>"}}
+        "calendar": {"format": {"today": "<b><u>{}</u></b>"}}
     },
     "cpu": {
 		"interval": 3,
@@ -128,21 +130,21 @@
     },
     "network#net_up": {
 		"interval": 3,
-		"format": "{bandwidthUpBytes}",
+		"format": "{bandwidthUpBytes} ",
         "tooltip": false
     },
     "network#net_down": {
 		"interval": 3,
-		"format": "{bandwidthDownBytes}",
+		"format": "{bandwidthDownBytes} ",
         "tooltip": false
     },
     "wireplumber": {
         "scroll-step": 5.0, // %, can be a float
-        //"format": "{volume}% ",
         "format": "{volume}% ",
-        "format-muted": "MUTED",
+        "format-muted": "MUTE ",
 		"on-click": "wpctl set-mute @DEFAULT_SINK@ toggle",
-        "on-click-right": "pwvucontrol"
+        "on-click-right": "pwvucontrol",
+        "tooltip": false
     },
     "custom/expand": {
         "format": "",
@@ -184,7 +186,7 @@
         // https://github.com/Alexays/Waybar/wiki/Module:-Group
     },
 	"custom/updates": {
-        "format" : "  {}",
+        "format" : " {}",
 		"exec": "~/.config/waybar/scripts/updates.sh",
 		"tooltip": false,
 		"on-click": "kitty yay"
