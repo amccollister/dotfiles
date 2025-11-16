@@ -7,8 +7,7 @@
     // Choose the order of the modules
     "modules-left": ["custom/power","custom/updates","hyprland/workspaces"],
     "modules-center": ["custom/media"],
-    "modules-right": ["group/expand","wireplumber","tray","clock","custom/notification"],
-    //"modules-right": ["idle_inhibitor","network#net_up","network#net_down","cpu","memory","temperature","wireplumber","tray","clock","custom/notification"],
+    "modules-right": ["group/expand","wireplumber","tray","clock", "idle_inhibitor", "custom/notification"],
 
     // Modules configuration
     "hyprland/workspaces": {
@@ -26,7 +25,7 @@
     },
     "custom/notification": {
         "tooltip": false,
-        "format": "",
+        "format": "",
         "on-click": "swaync-client -t -sw",
         "escape": true
     },
@@ -83,14 +82,14 @@
     },
     "memory": {
 		"interval": 3,
-        "format": "{}% "
+        "format": "{}% "
     },
     "temperature": {
 		"interval": 3,
         "hwmon-path": "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon1/temp1_input",
         "critical-threshold": 75,
         "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""],
+        "format-icons": ["", "", ""],
         "format-critical": "{temperatureC}°C {icon}"
     },
     "backlight": {
@@ -139,8 +138,9 @@
     },
     "wireplumber": {
         "scroll-step": 5.0, // %, can be a float
+        //"format": "{volume}% ",
         "format": "{volume}% ",
-        //"format-muted": "<no speaker symbol>",
+        "format-muted": "MUTED",
 		"on-click": "wpctl set-mute @DEFAULT_SINK@ toggle",
         "on-click-right": "pwvucontrol"
     },
@@ -154,7 +154,7 @@
     },
     "group/expand": {
         "orientation": "horizontal",
-        "modules": ["custom/expand", "network#net_up","network#net_down","cpu","memory","temperature", "idle_inhibitor", "custom/endpoint"],
+        "modules": ["custom/expand", "network#net_up","network#net_down","cpu","memory","temperature", "custom/endpoint"],
         "drawer": {
             "transition-duration": 750,
             "transition-to-left": true,
@@ -168,7 +168,7 @@
         "max-length": 64,
         "format-icons": {
             "spotify": "",
-            "default": "🎜"
+            "default": ""
         },
         "escape": true,
         "exec": "python $HOME/.config/waybar/scripts/spotify_status.py",
@@ -177,7 +177,7 @@
         "on-click-right": "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
     },
     "custom/power": {
-        "format" : "⏻",
+        "format" : "",
 		"tooltip": false,
 		"on-click": "~/.config/waybar/scripts/powermenu.sh"
         // TODO: Convert this shit to use a vastly simpler drawer!
