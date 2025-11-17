@@ -38,6 +38,10 @@ tooltip {
 }
 
 #custom-power:hover,
+#custom-reboot:hover,
+#custom-logout:hover,
+#custom-lock:hover,
+#custom-windows:hover,
 #custom-updates:hover,
 #custom-media:hover,
 #network:hover,
@@ -51,7 +55,7 @@ tooltip {
     transition: all .3s ease;
     color: @color7;
 }
-#custom-notification, 
+#custom-notification,
 #custom-media, 
 #cpu, 
 #memory, 
@@ -65,6 +69,28 @@ tooltip {
 }
 #custom-power{
     font-size: 18px;
+    padding-left: 8px;
+    transition: all .3s ease;
+    color: @foreground;
+}
+#custom-reboot{
+    font-size: 24px;
+    padding-left: 12px;
+    padding-right: 8px;
+    padding-bottom: 2px;
+    transition: all .3s ease;
+    color: @foreground;
+}
+#custom-logout,
+#custom-lock{
+    font-size: 24px;
+    padding: 0px 8px;
+    padding-bottom: 2px;
+    transition: all .3s ease;
+    color: @foreground;
+}
+#custom-windows{
+    font-size: 22px;
     padding-left: 8px;
     transition: all .3s ease;
     color: @foreground;
@@ -133,6 +159,7 @@ tooltip {
     animation-direction: alternate;
 }
 
+#group-power,
 #group-expand, 
 #custom-expand, 
 #custom-endpoint{

@@ -124,11 +124,7 @@
     "group/expand": {
         "orientation": "horizontal",
         "modules": ["custom/expand", "network#net_up","network#net_down","cpu","memory","temperature", "custom/endpoint"],
-        "drawer": {
-            "transition-duration": 750,
-            "transition-to-left": true,
-            "click-to-reveal": false
-        }
+        "drawer": {"transition-duration": 750}
     },
     "custom/media": {
 		"interval": 1,
@@ -153,22 +149,15 @@
     },
     "group/power": {
         "orientation": "inherit",
-        "drawer": {
-            "transition-duration": 500,
-            "children-class": "not-power",
-            "transition-left-to-right": false
-        },
-    "modules": ["custom/power"]//, "custom/lock",]
-    // Windows Logout Lock Restart Shutdown
+        "drawer": {"transition-duration": 750},
+        "modules": ["custom/power", "custom/reboot", "custom/logout", "custom/lock", "custom/windows"]
     },
     "custom/power": {
         "format" : "",
 		"tooltip": false,
-        "on-click": "~/.config/waybar/scripts/powermenu.sh"
-		//"on-click": "shutdown now"
-        // TODO: Convert this shit to use a vastly simpler drawer!
-        // https://github.com/Alexays/Waybar/wiki/Module:-Group
-    },/*
+        "on-click": "shutdown now"
+        //"on-click": "~/.config/waybar/scripts/powermenu.sh"
+    },
     "custom/logout": {
         "format": "󰗼",
         "tooltip": false,
@@ -188,5 +177,5 @@
         "format": "",
         "tooltip": false,
         "on-click": "systemctl reboot --boot-loader-entry=windows.conf"
-    }*/
+    }
 }
