@@ -5,7 +5,7 @@
     "reload_style_on_change": true,
 
     // Choose the order of the modules
-    "modules-left": ["custom/power","custom/updates","hyprland/workspaces"],
+    "modules-left": ["group/power","custom/updates","hyprland/workspaces"],
     "modules-center": ["custom/media"],
     "modules-right": ["group/expand","wireplumber","tray","clock", "idle_inhibitor", "custom/notification"],
 
@@ -29,32 +29,6 @@
         "on-click": "swaync-client -t -sw",
         "escape": true
     },
-    "mpd": {
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-        "format-disconnected": "Disconnected ",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-        "unknown-tag": "N/A",
-        "interval": 5,
-        "consume-icons": {
-            "on": " "
-        },
-        "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ",
-            "on": " "
-        },
-        "repeat-icons": {
-            "on": " "
-        },
-        "single-icons": {
-            "on": "1 "
-        },
-        "state-icons": {
-            "paused": "",
-            "playing": ""
-        },
-        "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)"
-    },
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
@@ -65,10 +39,6 @@
     "tray": {
         "icon-size": 24,
         "spacing": 8
-        // "icons": {
-        //   "blueman": "bluetooth",
-        //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
-        // }
     },
     "clock": {
         "format": "{:%H:%M}",
@@ -113,9 +83,6 @@
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
-    },
-    "battery#bat2": {
-        "bat": "BAT2"
     },
     "power-profiles-daemon": {
       "format": "{icon}",
@@ -178,17 +145,48 @@
         "on-click-middle": "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous",
         "on-click-right": "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
     },
-    "custom/power": {
-        "format" : "",
-		"tooltip": false,
-		"on-click": "~/.config/waybar/scripts/powermenu.sh"
-        // TODO: Convert this shit to use a vastly simpler drawer!
-        // https://github.com/Alexays/Waybar/wiki/Module:-Group
-    },
 	"custom/updates": {
         "format" : " {}",
 		"exec": "~/.config/waybar/scripts/updates.sh",
 		"tooltip": false,
 		"on-click": "kitty yay"
-    }
+    },
+    "group/power": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-power",
+            "transition-left-to-right": false
+        },
+    "modules": ["custom/power"]//, "custom/lock",]
+    // Windows Logout Lock Restart Shutdown
+    },
+    "custom/power": {
+        "format" : "",
+		"tooltip": false,
+        "on-click": "~/.config/waybar/scripts/powermenu.sh"
+		//"on-click": "shutdown now"
+        // TODO: Convert this shit to use a vastly simpler drawer!
+        // https://github.com/Alexays/Waybar/wiki/Module:-Group
+    },/*
+    "custom/logout": {
+        "format": "󰗼",
+        "tooltip": false,
+        "on-click": "hyprctl dispatch exit"
+    },
+    "custom/lock": {
+        "format": "󰍁",
+        "tooltip": false,
+        "on-click": "hyprlock"
+    },
+    "custom/reboot": {
+        "format": "󰜉",
+        "tooltip": false,
+        "on-click": "reboot"
+    },
+    "custom/windows": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "systemctl reboot --boot-loader-entry=windows.conf"
+    }*/
 }
