@@ -145,7 +145,7 @@
         "format" : " {}",
 		"exec": "~/.config/waybar/scripts/updates.sh",
 		"tooltip": false,
-		"on-click": "kitty yay --noconfirm"
+		"on-double-click": "kitty yay --noconfirm"
     },
     "group/power": {
         "orientation": "inherit",
@@ -155,26 +155,26 @@
     "custom/power": {
         "format" : "",
 		"tooltip": false,
-        "on-click": "shutdown now"
+        "on-double-click": "shutdown now"
     },
     "custom/logout": {
         "format": "󰗼",
         "tooltip": false,
-        "on-click": "hyprctl dispatch exit"
+        "on-double-click": "hyprctl dispatch exit"
     },
     "custom/lock": {
         "format": "󰍁",
         "tooltip": false,
-        "on-click": "hyprlock"
+        "on-double-click": "hyprlock"
     },
     "custom/reboot": {
         "format": "󰜉",
         "tooltip": false,
-        "on-click": "reboot"
+        "on-double-click": "reboot"
     },
     "custom/windows": {
         "format": "",
         "tooltip": false,
-        "on-click": "systemctl reboot --boot-loader-entry=windows.conf"
+        "on-double-click": "systemctl reboot --boot-loader-entry=windows.conf"
     }
 }
