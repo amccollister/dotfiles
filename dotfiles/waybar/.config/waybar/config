@@ -145,7 +145,7 @@
         "format" : " {}",
 		"exec": "~/.config/waybar/scripts/updates.sh",
 		"tooltip": false,
-		"on-click": "kitty yay"
+		"on-click": "kitty yay --noconfirm"
     },
     "group/power": {
         "orientation": "inherit",

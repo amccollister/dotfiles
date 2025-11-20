@@ -1,0 +1,10 @@
+/* Global Rofi Configs */
+
+
+/* Colors */
+@import "~/.cache/wal/colors-rofi-dark.rasi"
+
+
+/* Fonts */
+* { font: "Jost* Book 14"; }
+
