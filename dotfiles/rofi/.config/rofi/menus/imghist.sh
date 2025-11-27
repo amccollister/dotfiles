@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 ## Author : Aditya Shakya (adi1090x)
 ## Github : @adi1090x
@@ -13,12 +13,7 @@
 
 dir="$HOME/.config/rofi/menus"
 
-## Run
-#rofi \
-#    -show drun \
-#    -theme ${dir}/cliphist.rasi
+rofi -modi clipboard:${dir}/modi-imghist.sh \
+     -show clipboard \
+     -theme ${dir}/imghist.rasi
 
-cliphist list | \
-    rofi -dmenu -display-columns 2 -theme ${dir}/cliphist.rasi | \
-    cliphist decode | \
-    wl-copy

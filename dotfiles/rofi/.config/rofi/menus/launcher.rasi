@@ -141,7 +141,6 @@ element alternate.normal {
     text-color:                  @foreground;
 }
 /*element selected.normal {
-    background-color:            @background-alt;
     background-color:            @alternate-normal-background;
     text-color:                  @foreground;
 }*/

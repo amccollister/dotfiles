@@ -10,8 +10,9 @@
 /*****----- Configuration -----*****/
 configuration {
 	modi:                       "drun";
-    show-icons:                 true;
+    show-icons:                 false;
     display-drun:               "";
+    display-clipboard:          "";
 	drun-display-format:        "{name}";
 }
 
@@ -24,7 +25,7 @@ window {
     location:                    west;
     anchor:                      west;
     fullscreen:                  false;
-    width:                       33%;
+    width:                       25%;
     height:                      100%;
     x-offset:                    0px;
     y-offset:                    0px;
@@ -91,14 +92,14 @@ entry {
 listview {
     enabled:                     true;
     columns:                     1;
-    lines:                       6;
+    /*lines:                     6;*/
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;
     layout:                      vertical;
     reverse:                     false;
-    fixed-height:                true;
-    fixed-columns:               true;
+    fixed-height:                false;
+    fixed-columns:               false;
     
     spacing:                     5px;
     margin:                      0px;
@@ -132,11 +133,14 @@ element {
     cursor:                      pointer;
 }
 element normal.normal {
-    background-color:            @background;
+    background-color:            transparent;
+    text-color:                  @foreground;
+}
+element alternate.normal {
+    background-color:            transparent;
     text-color:                  @foreground;
 }
 element selected.normal {
-    /* background-color:            @background-alt; */
     background-color:            @selected-normal-background;
     text-color:                  @foreground;
 }
