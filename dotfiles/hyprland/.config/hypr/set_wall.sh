@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# multi-monitor swww w/ pywal-16 | wal -n -a 75 --backend (wal/haishoku/colorthief) --cols16 --contrast 2 --saturate 0.33 -i $WP
+
+
+# Stole this from someone else lol
 WALLPAPER_DIR="$HOME/wallpapers/walls"
 #I dont know what the fuck I am doing
 
