@@ -14,6 +14,11 @@
 dir="$HOME/.config/rofi/menus"
 
 ## Run
-rofi \
-    -show window \
-    -theme ${dir}/switcher.rasi
+#rofi \
+#    -show drun \
+#    -theme ${dir}/cliphist.rasi
+
+cliphist list | \
+    rofi -dmenu -display-columns 2 -theme ${dir}/cliphist.rasi | \
+    cliphist decode | \
+    wl-copy
