@@ -19,6 +19,6 @@ fi
 
 # Assign the images per monitor
 for i in "${!monitors[@]}"; do
-  swww img -o "${monitors[$i]}" ~/.cache/wallpaper/$WALLPAPER-"$i".png --transition-type left --transition-fps 60; sleep 1.6;
+  awww img -o "${monitors[$i]}" ~/.cache/wallpaper/$WALLPAPER-"$i".png --transition-type left --transition-fps 60; sleep 1.6;
 done
 
