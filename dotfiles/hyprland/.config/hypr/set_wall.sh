@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# multi-monitor swww w/ pywal-16 | wal -n -a 75 --backend (wal/haishoku/colorthief) --cols16 --contrast 2 --saturate 0.33 -i $WP
+# multi-monitor awww w/ pywal-16 | wal -n -a 75 --backend (wal/haishoku/colorthief) --cols16 --contrast 2 --saturate 0.33 -i $WP
 
 
 # Stole this from someone else lol
@@ -14,7 +14,7 @@ menu() {
 main() {
     choice=$(menu | wofi -c ~/.config/wofi/wallpaper -s ~/.config/wofi/style-wallpaper.css --show dmenu --prompt "Select Wallpaper:" -n)
     selected_wallpaper=$(echo "$choice" | sed 's/^img://')
-    swww img "$selected_wallpaper" --transition-type any --transition-fps 60 --transition-duration .5
+    awww img "$selected_wallpaper" --transition-type any --transition-fps 60 --transition-duration .5
     wal -i "$selected_wallpaper" -n --cols16
     swaync-client --reload-css
     cat ~/.cache/wal/colors-kitty.conf > ~/.config/kitty/current-theme.conf
