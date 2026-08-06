@@ -1,3 +1,4 @@
+-- TODO: swap over to matugen
 require("~/.cache/wal/colors-hyprland.lua")
 
 -- Change display based on monitor size
