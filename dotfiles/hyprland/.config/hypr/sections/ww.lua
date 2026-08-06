@@ -9,7 +9,9 @@ hl.window_rule({ match = { class = "obsidian", }, workspace = 6, no_initial_focu
 -- Kitty Special Workspace Rules
 hl.workspace_rule({ workspace = "special:kitty_drop", on_created_empty = "[float] kitty --session ~/.config/kitty/drop.kitty-session" })
 hl.window_rule({ match = { workspace = "special:kitty_drop", class = "kitty" }, move = { "monitor_w * 0.005", "monitor_h * 0.01" }, size = { "monitor_w * 0.99", "monitor_h * 0.5" } })
-hl.window_rule({ match = { workspace = "special:kitty_drop", }, workspace = "+0", }) -- don't open programs in the special workspace
+
+-- Stopped working for the actual kitty program
+-- hl.window_rule({ match = { workspace = "special:kitty_drop", }, workspace = "+0", }) -- don't open programs in the special workspace
 
 -- Flameshot Special Window Rules
 hl.window_rule({ match = { class = "flameshot", title = "flameshot" }, decorate = false, no_anim = true, float = true, pin = true,})
