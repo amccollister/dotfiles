@@ -12,10 +12,10 @@ hl.config({
     decoration = {
         rounding            = 10,
         rounding_power      = 2,
-        --active_opacity    = 0.95  -- Opacity just seems so...
-        --inactive_opacity  = 0.90  -- extra
-        active_opacity      = 1.00,
-        inactive_opacity    = 1.00, 
+        active_opacity      = 0.97,  -- Opacity just seems so...
+        inactive_opacity    = 0.85,  -- extra
+        --active_opacity      = 1.00,
+        --inactive_opacity    = 1.00, 
 
         blur    = { enabled = true, popups = true, special = true, size = 3, passes = 3 },
         shadow  = { enabled = true, range = 15, render_power = 5, color = color0 },
