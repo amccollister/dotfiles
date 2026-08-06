@@ -145,7 +145,8 @@
         "format" : " {}",
 		"exec": "~/.config/waybar/scripts/updates.sh",
 		"tooltip": false,
-		"on-double-click": "kitty yay --noconfirm"
+		"on-double-click": "kitty yay --noconfirm",
+		"on-click-right": "kitty sh -c \"checkupdates && read -n 1 -s -r -p 'Press any key to continue...'\""
     },
     "group/power": {
         "orientation": "inherit",
