@@ -6,7 +6,7 @@ hl.env("HYPRCURSOR_SIZE", 40)
 --- AUTOSTART ---
 -- exec on reload
 hl.on("config.reloaded", function()
-    hl.exec_cmd("pkill waybar && waybar")
+    hl.exec_cmd("pkill waybar; waybar")
 end)
 
 -- exec once
