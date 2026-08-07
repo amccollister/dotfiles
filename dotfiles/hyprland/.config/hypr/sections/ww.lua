@@ -4,7 +4,7 @@
 hl.window_rule({ match = { class = "steam", },    workspace = 1, no_initial_focus = true, float = false })
 hl.window_rule({ match = { class = "spotify", },  workspace = 1, no_initial_focus = true})
 hl.window_rule({ match = { class = "vesktop", },  workspace = 5, no_initial_focus = true})
-hl.window_rule({ match = { class = "obsidian", }, workspace = 6, no_initial_focus = true})
+hl.window_rule({ match = { class = "md.Obsidian", }, workspace = 6, no_initial_focus = true})
 
 -- Kitty Special Workspace Rules
 hl.workspace_rule({ workspace = "special:kitty_drop", on_created_empty = "[float] kitty --session ~/.config/kitty/drop.kitty-session --class dropcat" })
