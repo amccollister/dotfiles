@@ -12,6 +12,11 @@ hl.config({
     },
 })
 
+hl.device({
+    name        = "syna30b7:00-06cb:ce19-touchpad",
+    sensitivity = 0,
+})
+
 --- KEYBINDS ---
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 local terminal = "kitty"
