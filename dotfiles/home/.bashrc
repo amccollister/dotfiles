@@ -49,7 +49,8 @@ source /usr/share/doc/pkgfile/command-not-found.bash
 source ~/.cache/wal/colors-tty.sh
 
 # Setup and source fzf
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# [ -f ~/.fzf.bash ] && source ~/.fzf.bash ### Old version
+eval "$(fzf --bash)"
 export FZF_CTRL_T_COMMAND='fd . --type f -H'
 export FZF_ALT_C_COMMAND='fd . --type d -H'
 
