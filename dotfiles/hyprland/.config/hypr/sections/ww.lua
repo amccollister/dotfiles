@@ -16,7 +16,7 @@ hl.window_rule({ match = { class = "flameshot", title = "flameshot" }, decorate 
 
 -- Add blur to specific windows -- ignorealpha doesn't blur if alpha is under value
 hl.layer_rule({match = {namespace = "rofi"                       },    blur = true         })
-hl.layer_rule({match = {namespace = "rofi"                       },    ignore_alpha = 0.25  })
+hl.layer_rule({match = {namespace = "rofi"                       },    ignore_alpha = 0.25 })
 hl.layer_rule({match = {namespace = "swaync-control-center"      },    blur = true         })
 hl.layer_rule({match = {namespace = "swaync-control-center"      },    ignore_alpha = 0.25 })
 hl.layer_rule({match = {namespace = "swaync-notification-window" },    blur = true         })
