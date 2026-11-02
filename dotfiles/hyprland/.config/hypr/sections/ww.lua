@@ -7,7 +7,14 @@ hl.window_rule({ match = { class = "vesktop", },  workspace = 5, no_initial_focu
 hl.window_rule({ match = { class = "md.Obsidian", }, workspace = 6, no_initial_focus = true})
 
 -- Kitty Special Workspace Rules
-hl.workspace_rule({ workspace = "special:kitty_drop", on_created_empty = "[float] kitty --session ~/.config/kitty/drop.kitty-session --class dropcat" })
+-- hl.workspace_rule({ workspace = "special:kitty_drop", on_created_empty = "[float] kitty --session ~/.config/kitty/drop.kitty-session --class dropcat" })
+hl.workspace_rule({ workspace = "special:kitty_drop" })
+hl.on("workspace.created", function(ws)
+    if ws.name == "special:kitty_drop" and ws.is_empty then
+        hl.exec_cmd("[float] kitty --session ~/.config/kitty/drop.kitty-session --class dropcat")
+    end
+end)
+
 hl.window_rule({ match = { workspace = "special:kitty_drop", class = "dropcat" }, move = { "monitor_w * 0.005", "monitor_h * 0.01" }, size = { "monitor_w * 0.99", "monitor_h * 0.5" } })
 hl.window_rule({ match = { workspace = "special:kitty_drop", class = "negative:dropcat" }, workspace = "e+0", }) -- don't open other programs in the special workspace
 
