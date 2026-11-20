@@ -6,13 +6,18 @@ hl.env("HYPRCURSOR_SIZE", 40)
 --- AUTOSTART ---
 -- exec once
 hl.on("hyprland.start", function()
-    hl.exec_cmd("awww-daemon & flameshot")
-    hl.exec_cmd("swaync & hypridle")
+    -- background processes
+    hl.exec_cmd("awww-daemon")
+    hl.exec_cmd("flameshot")
+    hl.exec_cmd("swaync")
+    hl.exec_cmd("hypridle")
     hl.exec_cmd("sunsetr p default")
+
+    -- always on programs
     hl.exec_cmd("[workspace 1 silent] spotify-launcher")
     hl.exec_cmd("[workspace 3 silent] firefox")
     hl.exec_cmd("[workspace 6 silent] obsidian --enable-features=UseOzonePlatform --ozone-platform=wayland")
-    hl.exec_cmd("[workspace 1 silent] sleep 4 && steam")
+    hl.exec_cmd("[workspace 1 silent] steam")
     hl.exec_cmd("vesktop")
     hl.exec_cmd("waybar")
 
