@@ -4,5 +4,5 @@
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
-export PATH="${PATH}:/home/andrew/.local/bin"
+export PATH="${PATH}:$HOME/.local/bin"
 
