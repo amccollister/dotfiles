@@ -1,6 +1,3 @@
-" Encoding
-set encoding=utf-8
-
 " Set compatibility to Vim only.
 set nocompatible
 
@@ -55,8 +52,6 @@ set noshiftround
 autocmd FileType * setlocal noexpandtab
 " Display 5 lines above/below the cursor when scrolling with a mouse.
 set scrolloff=5
-" Fixes common backspace problems
-set backspace=indent,eol,start
 
 " Speed up scrolling in Vim
 set ttyfast
@@ -77,7 +72,7 @@ set hlsearch
 " Enable incremental search
 set incsearch
 " Include only uppercase words with uppercase search term
-" set smartcase
+set smartcase
 " Include matching uppercase words with lowercase search term
 set ignorecase
 

@@ -8,7 +8,7 @@
 # Improve the bash history
 export HISTFILESIZE=100000
 export HISTSIZE=100000
-export HISTCONTROL=erasedups:ignoredups:ignorespace
+export HISTCONTROL=erasedups:ignorespace
 
 # Check window size and append history
 shopt -s autocd
