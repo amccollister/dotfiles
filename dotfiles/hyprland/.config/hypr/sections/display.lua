@@ -1,7 +1,4 @@
 --- DISPLAY ---
-
---360HZ not applying automatically... why?
--- TODO: Automatically adjust depending on what monitor is available
 hl.monitor({output = "DP-1", mode = "2560x1440@360", position = "2560x0", vrr = 1, scale = 1})
 hl.monitor({output = "DP-2", mode = "2560x1440@180", position = "5120x0", vrr = 1, scale = 1})
 hl.monitor({output = "DP-3", mode = "2560x1440@180", position = "0x0",    vrr = 1, scale = 1})
