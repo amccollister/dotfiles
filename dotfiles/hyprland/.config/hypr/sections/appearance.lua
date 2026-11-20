@@ -12,19 +12,21 @@ hl.config({
     decoration = {
         rounding            = 10,
         rounding_power      = 2,
-        --active_opacity      = 0.97,  -- Opacity just seems so...
-        --inactive_opacity    = 0.85,  -- extra
-        active_opacity      = 1.00,
-        inactive_opacity    = 1.00,
+        active_opacity      = 0.97,  -- Opacity just seems so...
+        inactive_opacity    = 0.85,  -- extra
+        -- active_opacity      = 1.00,
+        -- inactive_opacity    = 1.00,
 
         blur    = { enabled = true, popups = true, special = true, size = 3, passes = 3 },
         shadow  = { enabled = true, range = 15, render_power = 4, color = color0 },
     },
-    -- https://wiki.hypr.land/Configuring/Advanced-and-Cool/Animations/
     animations  = { workspace_wraparound = true },
     dwindle     = { preserve_split = true },
-    misc        = { disable_hyprland_logo = true }
+    misc        = { disable_hyprland_logo = true, disable_splash_rendering = true, background_color = "0x000000", force_default_wallpaper = 0 }
 })
+
+-- possible startup screen fix
+hl.animation({leaf = "monitorAdded", enabled = false})
 
 hl.curve("easeInOutCubic", { type = "bezier", points = { {0.65, 0.05}, {0.36, 1.00} }})
 hl.curve("almostLinear",   { type = "bezier", points = { {0.50, 0.50}, {0.75, 1.00} }})
@@ -39,4 +41,4 @@ hl.animation({ leaf = "fade",       enabled = true, speed = 4, bezier = "snappy"
 hl.animation({ leaf = "workspaces", enabled = true, speed = 2, bezier = "easeInOutCubic", style = "slide"     })
 
 -- Kitty Animation
-hl.animation({ leaf = "specialWorkspace", enabled = true, speed = 3.5, bezier = "almostLinear", style = "slidevert -75%" })
+hl.animation({ leaf = "specialWorkspace", enabled = true, speed = 3, bezier = "almostLinear", style = "slidevert -75%" })
